@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>换肤功能</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/js-demo.js" ></script>
+    </head>
+    <style>
+        @charset "utf-8";
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body,html{
+            height: 100%;
+            font-family: "微软雅黑";
+            font-size: 12px;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul li{
+            list-style: none;
+        }
+        @font-face {
+        font-family: 'Skinning';  /* project id 377781 */
+        src: url('//at.alicdn.com/t/font_rvrhkp7qi2akyb9.eot');
+        src: url('//at.alicdn.com/t/font_rvrhkp7qi2akyb9.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_rvrhkp7qi2akyb9.woff') format('woff'),
+        url('//at.alicdn.com/t/font_rvrhkp7qi2akyb9.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_rvrhkp7qi2akyb9.svg#iconfont') format('svg');
+        }
+        header{
+            height: 100%;
+            background: url(../images/01.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .head-top{
+            width: 100%;
+            background: #d1d1d1;
+        }
+        .top-skin{
+            display: block;
+            max-width: 50px;
+            margin-left: 20px;
+            line-height: 26px;
+            text-align: center;
+            cursor:pointer;
+        }
+        .top-skin span{
+            font-family: 'Skinning';
+            color: #00c4ff;
+        }
+        .top-skin:hover{
+            background: #c2c2c2;
+        }
+        .more-skin{
+            margin-left: 20px;
+            max-width: 400px;
+            background: #c2c2c2;
+            overflow: auto;
+            zoom: 1;
+            padding: 0.5%;
+            display: none;
+        }
+        .more-skin ul li{
+            width: 24.2%;
+            height: 60px;
+            float: left;
+            margin-right: 1%;
+            position: relative;
+            cursor:pointer;
+        }
+        .more-skin ul li img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .more-skin ul li:last-child{
+            margin-right: 0;
+        }
+        .more-skin ul li span{
+            font-family: 'progre';
+            color: green;
+            font-size: 20px;
+            z-index: 99;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            display: none;
+        };
+    </style>
+    <script>
+        window.onload = function(){
+            var oHeader = document.getElementById('onhead');
+            var oSkin = document.getElementById('skin');
+            var oMore = document.getElementById('more');
+            var oLiMore = oMore.getElementsByTagName('li');
+            var tiStop;
+            oSkin.onmouseover = oMore.onmouseover = function(){
+                clearTimeout(tiStop);
+                oMore.style.display = 'block';
+            }
+            oMore.onmouseout = function(){
+                tiStop = setTimeout(function(){
+                    oMore.style.display = 'none';
+                },500)
+            };
+            /*延迟悬浮End*/
+            var oImages =[
+            'url(images/Skin-01.jpg',
+            'url(images/Skin-02.jpg',
+            'url(images/Skin-03.jpg',
+            'url(images/Skin-04.jpg'
+            ];
+            function setStyle(obj,name,value){
+                return obj.style[name] = value;
+            };
+            oLiMore[0].onclick = function(){setStyle(oHeader,'backgroundImage',oImages[0])};
+            oLiMore[1].onclick = function(){setStyle(oHeader,'backgroundImage',oImages[1])};
+            oLiMore[2].onclick = function(){setStyle(oHeader,'backgroundImage',oImages[2])};
+            oLiMore[3].onclick = function(){setStyle(oHeader,'backgroundImage',oImages[3])};
+        };
+    </script>
+	<body>
+		<header id="onhead" style="background: url(images/01.jpg);background-repeat: no-repeat;background-size: cover;background-position: center center;">
+			<div class="head-top">
+				<a class="top-skin" id="skin" ><span>&#xe600;</span>换肤</a>
+			</div>
+			<div class="more-skin" id="more">
+				<ul>
+					<li><img src="images/Skin-sma-01.jpg"><span>&#xe600;</span></li>
+					<li><img src="images/Skin-sma-02.jpg"><span>&#xe600;</span></li>
+					<li><img src="images/Skin-sma-03.jpg"><span>&#xe600;</span></li>
+					<li><img src="images/Skin-sma-04.jpg"><span>&#xe600;</span></li>
+				</ul>
+			</div>
+		</header>
+	</body>
+</html>
