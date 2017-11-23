@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5-拼图</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .clearfix:after{content: "020"; display: block; height: 0; clear: both; visibility: hidden;}
+    .clearfix {zoom: 1;}
+
+    .container{
+        width: 580px;
+        margin: 0 auto;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        
+    }
+    .container .Console{
+        float: left;
+        width: 178px;
+        height: 360px;
+        margin: 10px 10px 0 10px;
+        border: 1px d #000000;
+        box-sizing: border-box;
+    }
+    .container .Gaming{
+        float: left;
+        width: 360px;
+        height: 360px;
+        margin: 10px; 
+        box-sizing: border-box;
+        position: relative;
+        border: 1px solid #000000;
+    }
+    .Gaming div{
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        text-align: center;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        position: absolute;
+        transition: 0.3s;
+    }
+    .a1{
+        left: 0;
+        top: 0;
+    }
+    .a2{
+        left: 120px;
+        top: 0;
+    }
+    .a3{
+        left: 240px;
+        top: 0;
+    }
+    .a4{
+        left: 0;
+        top: 120px;
+    }
+    .a5{
+        left: 120px;
+        top: 120px;
+    }
+    .a6{
+        left: 240px;
+        top: 120px;
+    }
+    .a7{
+        left: 0px;
+        top: 240px;
+    }
+    .a8{
+        left: 120px;
+        top: 240px;
+    }
+</style>
+<body>
+    <div class="container clearfix">
+        <div class="Console">
+            <div>
+                <p>用时：<span>00:00</span></p>
+            </div>
+            <button>开始</button>
+            <button>重置</button>
+        </div>
+        <div class="Gaming">
+            <div class="a1">1</div>
+            <div class="a2">2</div>
+            <div class="a3">3</div>
+            <div class="a4">4</div>
+            <div class="a5">5</div>
+            <div class="a6">6</div>
+            <div class="a7">7</div>
+            <div class="a8">8</div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+</html>
