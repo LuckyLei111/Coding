@@ -13,6 +13,7 @@ var d_mark = new Array(
     [5,7,9],
     [6,8]
 );
+
 //保存div可移动的实际位置
 var g_divXY = new Array(
     [0],
