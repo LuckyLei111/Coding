@@ -31,9 +31,6 @@ var g_divXY = new Array(
 //获取点击的div编号
 
 
-var shuz = new Array(1,2,3,4,5,6);
-alert(shuz[1]);
-
 function move(value){
     alert(value);
 };
