@@ -28,7 +28,14 @@ var g_divXY = new Array(
 )
 //获取点击的div编号
 
+var d = new Array(10);  //保存div编号
+d[1]=1;d[2]=2;d[3]=3;d[4]=4;d[5]=5;d[6]=6;d[7]=7;d[8]=8;d[9]=0;
 
-function move(value){
-    alert(value);
+function move(id){
+    //移动函数
+    var i = 1;
+    for(i = 1;i<10;++i){
+        if(d[i] == id)
+        break;
+    }
 };
