@@ -38,4 +38,18 @@ function move(id){
         if(d[i] == id)
         break;
     }
+    //for循环用于找出div的位置
+    alert(i);
+    var sd_target = 0;  //保存小div的移动的位置,0表示不能移动
+    sd_target = whereDiv(i)
+    //whereDiv函数用于找出被点击的div可以去的位置，如果返回0，表示不能移动;
+    alert(d_mark[1]);
 };
+
+function whereDiv(val){
+    //判断是否可以移动函数,参数是被点击的div的编号
+    var j = 0;
+    var move_flog = false;
+    for(j = 0;j<d_mark[val];++j){
+    }
+}
