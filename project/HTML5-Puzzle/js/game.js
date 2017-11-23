@@ -15,3 +15,6 @@ var g_divXY = new Array(
     [240,120],
     [240,120],
 )
+function move(value){
+    alert(value);
+};
