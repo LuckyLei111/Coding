@@ -1,7 +1,5 @@
 var time = 0;   //初始化时间
 
-var d = new Array(10);
-
 //保存div可移动的位置编号
 var d_mark = new Array(
     [0],
