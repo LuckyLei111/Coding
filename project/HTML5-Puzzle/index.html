@@ -2,51 +2,88 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML5-拼图</title>
+    <title>HTML5-拼图小游戏</title>
 </head>
 <style>
     *{
         margin: 0;
         padding: 0;
     }
+    body{
+        font-family: "微软雅黑";
+    }
     .clearfix:after{content: "020"; display: block; height: 0; clear: both; visibility: hidden;}
     .clearfix {zoom: 1;}
-
+    @font-face {
+        font-family: "dsdigi";
+        src: url('js/ds-digi.ttf');
+    }
     .container{
         width: 580px;
-        margin: 0 auto;
-        border: 1px solid #000000;
+        margin: 80px auto 0;
+        box-shadow: 0 0 10px #000000;
         box-sizing: border-box;
         
     }
     .container .Console{
         float: left;
-        width: 178px;
+        width: 183px;
         height: 360px;
-        margin: 10px 10px 0 10px;
-        border: 1px d #000000;
+        margin: 10px 5px 0 10px;
+        padding-top: 20px;
+        border: 1px solid #000000;
         box-sizing: border-box;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #ffffff;
+    }
+    .container .Console div{
+        width: 80%;
+    	font-size: 20px;
+        margin: 0 auto;
+    }
+    .container .Console div span{
+        font-family: 'dsdigi';
+        font-size: 24px;
+    }
+    .container .Console button{
+    	display: block;
+    	width: 80%;
+    	margin: 10px auto 0;
+    	line-height: 32px;
+        border: none;
+        box-shadow: 0 0 10px #ffffff;
+
     }
     .container .Gaming{
         float: left;
         width: 360px;
         height: 360px;
-        margin: 10px; 
+        margin: 10px;
+        background: #ffffff;
         box-sizing: border-box;
         position: relative;
-        border: 1px solid #000000;
     }
     .Gaming div{
         width: 120px;
         height: 120px;
         line-height: 120px;
         text-align: center;
-        border: 1px solid #000000;
         box-sizing: border-box;
         position: absolute;
         transition: 0.3s;
+    }
+    .Gaming .s_box{
+        width: 116px;
+        height: 116px;
+        margin: 2px auto;
+        border-radius: 10px;
+        background: #b0b0b0;
+        box-shadow: 0 0 10px #ffffff;
+    }
+    .Gaming .s_box:hover{
+        background: red;
     }
     .a1{
         left: 0;    /*X轴*/
@@ -85,20 +122,20 @@
     <div class="container clearfix">
         <div class="Console">
             <div>
-                <p>用时：<span>00:00</span></p>
+                <p>总用时：<span class="time_cost">00:00</span></p>
             </div>
-            <button>开始</button>
-            <button>重置</button>
+            <button class="onff" onclick="stats()">开始</button>
+            <button class="Reset" onclick="reset()">重置</button>
         </div>
         <div class="Gaming">
-            <div class="a1" onclick="move(1)">1</div>
-            <div class="a2" onclick="move(2)">2</div>
-            <div class="a3" onclick="move(3)">3</div>
-            <div class="a4" onclick="move(4)">4</div>
-            <div class="a5" onclick="move(5)">5</div>
-            <div class="a6" onclick="move(6)">6</div>
-            <div class="a7" onclick="move(7)">7</div>
-            <div class="a8" onclick="move(8)">8</div>
+            <div class="a1" onclick="move(1)"><div class="s_box">1</div></div>
+            <div class="a2" onclick="move(2)"><div class="s_box">2</div></div>
+            <div class="a3" onclick="move(3)"><div class="s_box">3</div></div>
+            <div class="a4" onclick="move(4)"><div class="s_box">4</div></div>
+            <div class="a5" onclick="move(5)"><div class="s_box">5</div></div>
+            <div class="a6" onclick="move(6)"><div class="s_box">6</div></div>
+            <div class="a7" onclick="move(7)"><div class="s_box">7</div></div>
+            <div class="a8" onclick="move(8)"><div class="s_box">8</div></div>
         </div>
     </div>
     <script src="js/game.js"></script>
