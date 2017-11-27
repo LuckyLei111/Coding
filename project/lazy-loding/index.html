@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_487726_k27m8jmfglw0cnmi.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    body{
+        font-family: "微软雅黑";
+    }
+    html,body,main{
+      height: 100%;
+      position: relative;
+    }
+    ul li{
+        list-style: none;
+    }
+    .clearfix:after{content: "020"; display: block; height: 0; clear: both; visibility: hidden;}
+    .clearfix {zoom: 1;}
+    footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        height: 48px;
+        background: #c4c4c4;
+    }
+    footer ul li{
+        float: left;
+        width: calc(100% / 3);
+        text-align: center;
+        color: #3b3b3b;
+    }
+    footer ul li i{
+        display: block;
+        font-size: 28px;
+        line-height: 28px;
+    }
+    footer ul li span{
+        display: block;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    main section{
+        height: calc(100% - 48px);
+    }
+    .box ul li{
+        float: left;
+        font-size: 12px;
+    }
+    .box ul li:first-child{
+        width: 20%;
+    }
+    .box ul li h4{
+        font-weight: normal;
+        font-size: 14px;
+    }
+</style>
+<body>
+    <main>
+        <section class="top250">
+            <div class="box clearfix">
+                <ul>
+                    <li><img src="" alt=""></li>
+                    <li>
+                        <h4>Hello</h4>
+                        <p>歌手：<span>XXX</span></p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="clearfix">
+        <ul>
+            <li>
+                <i class="iconfont icon-top"></i>
+                <span>Top250</span>
+            </li>
+            <li>
+                <i class="iconfont icon-other"></i>
+                <span>其他</span>
+            </li>
+            <li>
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

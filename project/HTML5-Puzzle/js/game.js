@@ -74,7 +74,6 @@ function move(id){
         },300)
     }
 };
-
 //判断是否可以移动
 function whereDiv(val){
     //判断是否可以移动函数,参数是被点击的div的编号;		
