@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_487726_k27m8jmfglw0cnmi.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_487726_bdansgrtjf6flxr.css">
 </head>
 <style>
     *{
@@ -50,30 +50,65 @@
     }
     main section{
         height: calc(100% - 48px);
+        padding: 10px;
     }
-    .box ul li{
-        float: left;
+    .box a{
+        display: flex;
+        text-decoration: none;
+        color: #3b3b3b;
+    }
+    .box{
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #b1b1b1;
+        margin-bottom: 10px;
+    }
+    .box .text{
+        padding-left: 10px;
+    }
+    .box .text h4{
+        line-height: 1.5;
+        font-weight: normal;
+    }
+    .box .text p{
         font-size: 12px;
     }
-    .box ul li:first-child{
-        width: 20%;
+    .box .cover,
+    .box .cover img{
+        width: 70px;
     }
-    .box ul li h4{
-        font-weight: normal;
-        font-size: 14px;
+
+    /*加载*/
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg);  }
+    }
+    .loding{
+        padding-bottom: 48px;
+        text-align: center;
+    }
+    .loding span{
+        display: inline-block;
+        animation: 1s rotate linear infinite;
     }
 </style>
 <body>
     <main>
         <section class="top250">
-            <div class="box clearfix">
-                <ul>
-                    <li><img src="" alt=""></li>
-                    <li>
-                        <h4>Hello</h4>
-                        <p>歌手：<span>XXX</span></p>
-                    </li>
-                </ul>
+            <div class="box">
+                <a href="#">
+                    <div class="cover">
+                        <img src="https://placem.at/people?w=70&h=80">
+                    </div>
+                    <div class="text">
+                        <h4>测试</h4>
+                        <p><span>9.6</span>评分/<spanr>11</span>人收藏</p>
+                        <p>导演：<span>未知</span></p>
+                        <p>主演：<span>未知</span></p>
+                    </div>
+                </a>
+            </div>
+            <div class="loding">
+                <span class="iconfont icon-loding"></span>
             </div>
         </section>
     </main>
@@ -93,5 +128,19 @@
             </li>
         </ul>
     </footer>
+    <script>
+        function $(secetlor){
+            return document.querySelector(secetlor);
+        };
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET','http://api.douban.com/v2/movie/top250',true);
+        xhr.onload = function(){
+            if((xhr.status >= 200 && xhr.status< 300) || xhr.status == 304){
+                console.log("成功获取");
+            }
+        }
+        xhr.send();
+    </script>
 </body>
 </html>
