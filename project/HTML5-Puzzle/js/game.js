@@ -128,11 +128,11 @@ function reset(){
     random_d();
     time = 0;
     pause = true;
+    $('.time_cost').innerHTML = '00:00';
+    $('.onff').innerHTML = "开始";
     if(pause == true){
         clearInterval(onSetTime);
     }
-    $('.time_cost').innerHTML = '00:00';
-    $('.onff').innerHTML = "开始";
 }
 //随机打乱方块;
 function random_d(){
