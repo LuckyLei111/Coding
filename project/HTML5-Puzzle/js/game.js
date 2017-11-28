@@ -130,7 +130,7 @@ function reset(){
     pause = true;
     $('.time_cost').innerHTML = '00:00';
     $('.onff').innerHTML = "开始";
-    if(pause == true){
+    if(pause == false){
         clearInterval(onSetTime);
     }
 }
