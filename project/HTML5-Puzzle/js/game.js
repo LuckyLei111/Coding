@@ -69,7 +69,7 @@ function move(id){
     console.log(finish_fg);
     if(finish_fg == true){
         setTimeout(function(){
-            alert('完成');
+            alert('666');
             clearInterval(onSetTime);
         },300)
     }
