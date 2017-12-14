@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片懒加载</title>
+</head>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        body{
+            font-family: "微软雅黑";
+            background: rgb(40, 44, 52);
+        }
+
+        html,body,main{
+        height: 100%;
+        position: relative;
+        }
+
+        ul li{
+            list-style: none;
+        }
+        .clearfix:after{content: "020"; display: block; height: 0; clear: both; visibility: hidden;}
+        .clearfix {zoom: 1;}
+
+        .box{
+            width: 600px;
+            margin: 0 auto;
+        }
+        .box ul li{
+            width: 280px;
+            height: 180px;
+            float: left;
+            margin: 10px 10px;
+            background: #999;
+            border-radius: 10px;
+            transform: translate(0, 10px);
+            box-shadow: 0 0 10px 2px #17191d;
+            overflow: hidden;
+            transition: all 500ms;
+        }
+        .box ul li:hover{
+            position: relative;
+            transform: scale(1.3,1.3);
+            z-index: 1;
+        }
+        .box1 .load{
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    </style>
+<body>
+    <div class="box">
+        <ul class="clearfix">
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_01.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_02.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_03.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_04.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_05.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_06.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_07.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_08.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_09.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_10.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_11.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_12.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_13.jpg" dare-src="" width="100%" ></a></li>
+            <li class="load"><a href="#"><img src="http://data.luckyi.cn/data/lucky_photo_14.jpg" dare-src="" width="100%" ></a></li>
+        </ul>   
+    </div>
+    <script>
+        setTimeout(function(){
+            
+        },200)
+    </script>
+</body>
+</html>
