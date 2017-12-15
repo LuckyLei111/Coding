@@ -131,7 +131,6 @@
             </li>
         </ul>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
 
     <script>
         var oImg = document.querySelectorAll('img');
@@ -139,11 +138,13 @@
         var scorllTop = this.scrollY;       //滚动的距离；
 
         for (var i = 0; i < oImg.length; i++) {
-            if (oImg[i].offsetTop < scorllTop + windowH) {
-                oImg[i].src = oImg[i].getAttribute('daresrc');
-            }
+            (function(i) {
+                if (oImg[i].offsetTop < scorllTop + windowH) {
+                    oImg[i].src = oImg[i].getAttribute('daresrc');
+                } 
+            })(i)
         }
-
+        
         window.onscroll = function () {
             for (var i = 0; i < oImg.length; i++) {
                 (function (i) {
