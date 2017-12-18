@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>图片懒加载</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
 </head>
 <style>
     * {
@@ -63,6 +64,16 @@
         position: relative;
         transform: scale(1.3, 1.3);
         z-index: 1;
+    }
+    @media screen and (max-width:479px){
+        .box{
+            width: 310px;
+        }
+        .box ul li{
+            width: 145px;
+            height: 90px;
+            margin: 5px 5px;
+        }
     }
 </style>
 
@@ -133,26 +144,57 @@
     </div>
 
     <script>
-        var oImg = document.querySelectorAll('img');
-        var windowH = window.innerHeight;   //可视区域的高度
-        var scorllTop = this.scrollY;       //滚动的距离；
+        // var oImg = document.querySelectorAll('img');
+        // var windowH = window.innerHeight;   //可视区域的高度
+        // var scorllTop = this.scrollY;       //滚动的距离；
 
-        for (var i = 0; i < oImg.length; i++) {
-            (function(i) {
-                if (oImg[i].offsetTop < scorllTop + windowH) {
-                    oImg[i].src = oImg[i].getAttribute('daresrc');
-                } 
-            })(i)
-        }
-        
-        window.onscroll = function () {
-            for (var i = 0; i < oImg.length; i++) {
-                (function (i) {
-                    if (oImg[i].offsetTop < scorllTop + windowH) {
-                        oImg[i].src = oImg[i].getAttribute('daresrc');
-                    }
-                })(i)
+
+
+
+
+        lazyRender()
+
+        var clock
+
+        $(window).on('scroll', function () {
+            if (clock) {
+                clearTimeout(clock)
             }
+            clock = setTimeout(function () {
+                console.log('hello')
+                lazyRender()
+            }, 100)
+
+        })
+
+        function lazyRender() {
+            $('.box img').each(function () {        
+                if (checkShow($(this)) && !isLoaded($(this))) {
+                    loadImg($(this))
+                }
+            })
+        }
+
+        function checkShow($img) {
+            var scrollTop = $(window).scrollTop()
+            var windowHeight = $(window).height()
+            var offsetTop = $img.offset().top
+
+            if (offsetTop < scrollTop + windowHeight && offsetTop > scrollTop) {
+            //同时满足图片到文档的距离小于滚动的距离加上可视区的距离 和 图片到文档的距离大于滚动距离，返回true
+                return true
+            }
+            return false
+        }
+
+        //检查图片的自定义属性值是否全等于图片的src值，也就是检查真实图片是否已经加载
+        function isLoaded($img) {
+            return $img.attr('daresrc') === $img.attr('src')
+        }
+
+        //修改图片的src值
+        function loadImg($img) {
+            $img.attr('src', $img.attr('daresrc'))
         }
     </script>
 </body>
