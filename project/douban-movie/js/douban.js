@@ -1,6 +1,6 @@
 $('footer div').click(function(){
     var index = $(this).index()
-    $('section').hide().eq(index).fadeIn()
+    $('section').hide().eq(index).slideDown()
     $(this).addClass('active').siblings().removeClass('active')
 })
 //tab切换
@@ -15,7 +15,7 @@ $.ajax({
 }).done(function (ret) {
     console.log(ret)
 }).fail(function() {
-    console.log('errrr')   
+    console.log('Error')   
 })
 
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto 0;
+            box-sizing: border-box;
+            border: 1px solid #3d3d3d;
+            background: #666;
+        }
+    </style>
+<body>
+    <div class="box">
+        
+    </div>
+    <script>
+        /*jquery 的增删改查*/
+        $('.box').append(function(){
+            return "abc";
+        });
+    </script>
+</body>
+</html>
