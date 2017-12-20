@@ -102,7 +102,7 @@ section>.mus-bot>.rt>.progress>.time-pro{
     line-height: 16px;
     color: #757575;
 }
-@media screen and (max-width:479px){
+@media screen and (max-width:620px){
     section>.mus-bot{
         height: 60px;
     }
