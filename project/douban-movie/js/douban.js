@@ -17,8 +17,3 @@ $.ajax({
 }).fail(function() {
     console.log('Error')   
 })
-
-
-function setData(data) {
-    
-}
