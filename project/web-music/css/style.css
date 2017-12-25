@@ -58,18 +58,18 @@ section>.mus-bot{
     bottom: 0;
 }
 
-section>.mus-bot>.lt{
+section>.mus-pc-bot>.lt{
     min-width: 200px;
     margin-left: 4%;
     padding: 20px 0;
 }
-section>.mus-bot>.lt ul li{
+section>.mus-pc-bot>.lt ul li{
     float: left;
     display: block;
     margin: 0 1%;
     width: 31.3%;
 }
-section>.mus-bot>.lt ul li a{
+section>.mus-pc-bot>.lt ul li a{
     display: block;
     width: 40px;
     line-height: 38px;
@@ -80,27 +80,27 @@ section>.mus-bot>.lt ul li a{
     box-sizing: border-box;
     border-radius: 20px;
 }
-section>.mus-bot>.rt{
+section>.mus-pc-bot>.rt{
     width: calc(96% - 200px);
 }
-section>.mus-bot>.rt>.progress{
+section>.mus-pc-bot>.rt>.progress{
     width: 85%;
     margin: 2% 10% 0 5%;
 }
-section>.mus-bot>.rt>.progress>.progress-wid{
+section>.mus-pc-bot>.rt>.progress>.progress-wid{
     width: 100%;
     height: 2px;
     margin-bottom: 10px;
     background: #7575753d;
     position: relative;
 }
-section>.mus-bot>.rt>.progress>.progress-wid>.pro-bar{
+section>.mus-pc-bot>.rt>.progress>.progress-wid>.pro-bar{
     width: 50%;
     height: 2px;
     background-image: linear-gradient(to right, #00ffdd 50%, #7dff04 100%);
     position: absolute;
 }
-section>.mus-bot>.rt>.progress>.progress-wid>.pro-bar i{
+section>.mus-pc-bot>.rt>.progress>.progress-wid>.pro-bar i{
     display: block;
     width: 10px;
     height: 10px;
@@ -110,25 +110,25 @@ section>.mus-bot>.rt>.progress>.progress-wid>.pro-bar i{
     right: 0;
     top: -4px;
 }
-section>.mus-bot>.rt>.progress>.time-pro{
+section>.mus-pc-bot>.rt>.progress>.time-pro{
     font-size: 14px;
     line-height: 16px;
     color: #757575;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther{
     float: right;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther i{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther i{
     font-size: 20px;
     color: #a1a1a1;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume{
     position: relative;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume:hover>.vol-box{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume:hover>.vol-box{
     display: block;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box{
     display: none;
     position: absolute;
     top: -120px;
@@ -137,14 +137,14 @@ section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box{
     height: 100px;
     background: #cccccc;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progress{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progress{
     width: 2px;
     height: 80px;
     background: #eeeeee;
     margin: 10px auto;
     position: relative;
 }
-section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progress i{
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progress i{
     display: block;
     position: absolute;
     width: 10px;
@@ -157,7 +157,7 @@ section>.mius-top>.Ranking{
 section>.mius-top>.Ranking>ul>li{
     float: left;
     width: 18%;
-    height: 50px;
+    height: 80px;
     margin: 1% 1%;
     background: #eeeeee94;
 }
@@ -165,6 +165,12 @@ section>.mius-top>.Ranking>ul>li{
 @media screen and (max-width:785px){
     section>.mus-bot{
         height: 60px;
+    }
+    section>.mus-pc-bot{
+        display: none;
+    }
+    section>.mus-ph-bot{
+        display: block;
     }
     section>.mus-bot>.lt{
         padding: 10px 0;
