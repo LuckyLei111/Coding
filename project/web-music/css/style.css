@@ -150,7 +150,7 @@ section>.mus-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progress 
     width: 10px;
 }
 section>.mius-top>.Ranking{
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     background: #7575753d;
 }
@@ -165,5 +165,21 @@ section>.mius-top>.Ranking>ul>li{
 @media screen and (max-width:785px){
     section>.mus-bot{
         height: 60px;
+    }
+    section>.mus-bot>.lt{
+        padding: 10px 0;
+    }
+    section>.mius-top{
+        height: calc(100% - 60px);
+    }
+    section>.mius-top>.Ranking{
+        height: 100%;
+    }
+    section>.mius-top>.Ranking>ul{
+        height: 100%;
+    }
+    section>.mius-top>.Ranking>ul>li{
+        width: 48%;
+        height: 19%;
     }
 }
