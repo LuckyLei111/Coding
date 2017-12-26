@@ -163,22 +163,38 @@ section>.mius-top>.Ranking>ul>li{
 }
 
 /*phone*/
+section>.mus-ph-bot{
+    width: 100%;
+    display: none;
+}
+section>.mus-ph-bot>.lt{
+    width: 90px;
+    padding: 6px 0;
+}
 section>.mus-ph-bot>.lt>ul>li{
     float: left;
     display: block;
     margin: 0 1%;
     width: 48%;
+    text-align: center;
 }
 section>.mus-ph-bot>.lt>ul>li>a{
     display: inline-block;
-    width: 40px;
-    line-height: 38px;
+    width: 36px;
+    line-height: 34px;
     margin: 0 auto;
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     border: 1px solid #646464;
     box-sizing: border-box;
     border-radius: 20px;
+}
+section>.mus-ph-bot>.rt{
+    width: calc(100% - 100px);
+}
+section>.mus-ph-bot>.rt h3{
+    font-size: 16px;
+    color: linear-gradient(to right, #00ffdd 50%, #7dff04 100%);
 }
 
 @media screen and (max-width:785px){
@@ -189,10 +205,7 @@ section>.mus-ph-bot>.lt>ul>li>a{
         display: none;
     }
     section>.mus-ph-bot{
-        display: none;
-    }
-    section>.mus-bot>.lt{
-        padding: 5px 0;
+        display: block;
     }
     section>.mius-top{
         height: calc(100% - 50px);
