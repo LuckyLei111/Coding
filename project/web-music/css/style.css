@@ -167,7 +167,7 @@ section>.mus-ph-bot>.lt>ul>li{
     float: left;
     display: block;
     margin: 0 1%;
-    width: 31.3%;
+    width: 48%;
 }
 section>.mus-ph-bot>.lt>ul>li>a{
     display: inline-block;
@@ -189,7 +189,7 @@ section>.mus-ph-bot>.lt>ul>li>a{
         display: none;
     }
     section>.mus-ph-bot{
-        display: block;
+        display: none;
     }
     section>.mus-bot>.lt{
         padding: 5px 0;
