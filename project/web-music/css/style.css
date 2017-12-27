@@ -44,10 +44,40 @@ section{
     right: 0;
 }
 
-section>.mius-top{
+section>.mus-top{
     width: 100%;
     height: calc(100% - 80px);
 }
+
+
+/*pc*/
+section>.mus-pc-top{
+    padding-top: 50px;
+}
+section>.mus-pc-top>.mus-main{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+section>.mus-pc-top>.mus-main>.mus-cover img{
+    display: block;
+    width: 360px;
+    height: 360px;
+}
+section>.mus-pc-top>.mus-main>.mus-cover>.mus-name{
+    margin-top: 30px;
+}
+section>.mus-pc-top>.mus-main>.mus-cover>.mus-name>h3{
+    font-size: 26px;
+    padding: 10px 0;
+    color: #616161;
+}
+section>.mus-pc-top>.mus-main>.mus-cover>.mus-name>h4{
+    font-size: 20px;
+    color: #616161;
+}
+
+/*手机底部*/
 
 section>.mus-bot{
     width: 100%;
@@ -149,18 +179,6 @@ section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progre
     position: absolute;
     width: 10px;
 }
-section>.mius-top>.Ranking{
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #7575753d;
-}
-section>.mius-top>.Ranking>ul>li{
-    float: left;
-    width: 18%;
-    height: 80px;
-    margin: 1% 1%;
-    background: #eeeeee94;
-}
 
 /*phone*/
 section>.mus-ph-bot{
@@ -208,24 +226,14 @@ section>.mus-ph-bot>.rt P{
     section>.mus-bot{
         height: 50px;
     }
+    section>.mus-pc-top,
     section>.mus-pc-bot{
         display: none;
     }
     section>.mus-ph-bot{
         display: block;
     }
-    section>.mius-top{
+    section>.mus-top{
         height: calc(100% - 50px);
-    }
-    section>.mius-top>.Ranking{
-        height: 100%;
-    }
-    section>.mius-top>.Ranking>ul{
-        height: 100%;
-    }
-    section>.mius-top>.Ranking>ul>li{
-        width: 48%;
-        height: 19.4%;
-        margin: 1% 1% 0;
     }
 }
