@@ -5,8 +5,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS3动画</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul li{
+        list-style: none;
+    }
+    .m-wind{
+        width: 200px;
+        height: 300px;
+        margin: 50px auto 0;
+    }
+    .m-wind>.top{
+        width: 200px;
+        height: 45px;
+        position: relative;
+    }
+    .m-wind>.top::before{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 60px;
+        background: #000;
+        border-radius: 5px 5px 0 0;
+        transform-origin: bottom;
+        transform: rotate(-70deg);
+        left: 100px;
+        top: -10px;
+    }
+    .m-wind>.top::after{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 50px;
+        background: #000;
+        border-radius: 5px 5px 0 0;
+        transform-origin: bottom;
+        transform: rotate(30deg);
+        left: 95px;
+        top: 0px;
+    }
+    .m-wind>.head{
+        width: 180px;
+        height: 120px;
+        border: 10px solid #000;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        padding-top: 10px;
+    }
+    .m-wind>.head>.face{
+        width: 140px;
+        height: 90px;
+        margin: 0 auto;
+        border: 10px solid #000;
+        border-radius: 5px;
+        position: relative;
+    }
+    .m-wind>.head>.face::before{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 40px;
+        background: #000;
+        transform: rotate(60deg);
+        border-radius: 5px;
+        top: 12px;
+        left: 30px;
+    }
+    .m-wind>.head>.face::after{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 40px;
+        background: #000;
+        transform: rotate(-60deg);
+        border-radius: 5px;
+        top: 12px;
+        right: 30px;
+    }
+
+    .m-wind>.head>.face>.mouth{
+        width: 60px;
+        height: 40px;
+        margin: 50px auto 0;
+    }
+    .m-wind>.head>.face>.mouth>ul{
+        position: relative;
+    }
+    .m-wind>.head>.face>.mouth>ul>li{
+        width: 30px;
+        height: 15px;
+        border-radius: 0 0 15px 15px;
+        background: #000;
+        position: relative;
+        position: absolute;
+    }
+    .m-wind>.head>.face>.mouth>ul>li:first-child{
+        left: 5px;
+    }
+    .m-wind>.head>.face>.mouth>ul>li:last-child{
+        right: 5px;
+    }
+    .m-wind>.head>.face>.mouth>ul>li::before{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 5px;
+        background: #000;
+        border-radius:5px 5px 0 0;
+        top: -5px;
+    }
+    .m-wind>.head>.face>.mouth>ul>li::after{
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 5px;
+        background: #000;
+        border-radius:5px 5px 0 0;
+        top: -5px;
+        right: 0;
+    }
+    .m-wind>.head>.face>.mouth>ul>li>span{
+        display: block;
+        width: 10px;
+        height: 5px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .m-wind>.foot{
+        width: 200px;
+        position: relative;
+    }
+    .m-wind>.foot>ul>li:first-child{
+        left: 20px;
+    }
+    .m-wind>.foot>ul>li:last-child{
+        right: 20px; 
+    }
+    .m-wind>.foot>ul>li{
+        width: 30px;
+        height: 15px;
+        border-radius: 0 0 15px 15px;
+        background: #000;
+        position: relative;
+        position: absolute;
+    }
+    .m-wind>.foot>ul>li>span{
+        display: block;
+        width: 10px;
+        height: 5px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 0 0 5px 5px;
+    }
+    </style>
 </head>
 <body>
-    
+    <div class="m-wind">
+        <div class="top"></div>
+        <div class="head">
+            <div class="face">
+                <div class="mouth">
+                    <ul>
+                        <li><span></span></li>
+                        <li><span></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <li><span></span></li>
+                <li><span></span></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

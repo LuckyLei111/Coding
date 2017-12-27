@@ -12,21 +12,28 @@
             padding: 0;
         }
         .box{
+            display: block;
             width: 200px;
-            height: 200px;
-            border: 1px solid #c5c5c5;
+            height: 40px;
+            background: #00d9ff;
+            border: none;
+            border-radius: 10px;
             margin:  50px auto 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
             transition-property: all;       
-            transition-duration: 2s;        /*过渡时间*/
+            transition-duration: 1s;        /*过渡时间*/
             transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);     /*过渡效果*/
-            background: #5a5a5a;
-            transition-delay: 0ms; 
+            transition-delay: 0ms;
+            box-shadow: 0 10px 20px -6px rgb(255, 96, 96);
         }
         .box:hover{
-            margin-top: 100px;
+            margin-top: 40px;
+            box-shadow: 0 18px 20px -6px rgb(255, 166, 166);
         }
-    </style>
+    </style>    
 <body>
-    <div class="box"></div>
+    <button class="box">按钮</button>
 </body>
 </html>
