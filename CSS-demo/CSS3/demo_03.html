@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSS3动画</title>
+    <title>瑟瑟发抖的B站</title>
     <style>
     *{
         margin: 0;
@@ -15,8 +15,11 @@
     }
     .m-wind{
         width: 200px;
-        height: 300px;
+        height: 210px;
         margin: 50px auto 0;
+    }
+    .m-wind:hover{
+        animation:pulse 300ms infinite;
     }
     .m-wind>.top{
         width: 200px;
@@ -85,7 +88,6 @@
         top: 12px;
         right: 30px;
     }
-
     .m-wind>.head>.face>.mouth{
         width: 60px;
         height: 40px;
@@ -161,6 +163,41 @@
         margin: 0 auto;
         background: #fff;
         border-radius: 0 0 5px 5px;
+    }
+    @keyframes pulse {
+        0% {
+            transform: translate(8px,8px);
+        }
+        10% {
+            transform: translate(-8px,-8px);
+        }
+        20% {
+            transform: translate(-8px,8px);
+        }
+        30% {
+            transform: translate(8px,-8px);
+        }
+        40% {
+            transform: translate(-8px,8px);
+        }
+        50% {
+            transform: translate(8px,8px);
+        }
+        60% {
+            transform: translate(-8px,-8px);
+        }
+        70% {
+            transform: translate(-8px,8px);
+        }
+        80% {
+            transform: translate(8px,-8px);
+        }
+        90% {
+            transform: translate(-8px,8px);
+        }
+        80% {
+            transform: translate(8px,-8px);
+        }
     }
     </style>
 </head>
