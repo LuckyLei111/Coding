@@ -76,6 +76,13 @@ section>.mus-pc-top>.mus-main>.mus-cover>.mus-name>h4{
     font-size: 20px;
     color: #616161;
 }
+section>.mus-pc-top>.mus-main>.mus-word{
+    padding: 40px 20px 0;
+    width: calc(100% - 400px);
+    font-size: 18px;
+    color: #646464;
+    text-align: center;
+}
 
 /*手机底部*/
 
@@ -222,6 +229,45 @@ section>.mus-ph-bot>.rt P{
     font-size: 12px;
     color: #2b2b2b;
 }
+section>.mus-ph-top{
+    padding-top: 20px;
+}
+section>.mus-ph-top>.mus-main{
+    padding: 10px;
+}
+section>.mus-ph-top>.mus-main>.mus-cover{
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #757575;
+}
+section>.mus-ph-top>.mus-main>.mus-cover>img{
+    display: block;
+    float: left;
+    width: 150px;
+    height: 150px;
+}
+section>.mus-ph-top>.mus-main>.mus-cover>div{
+    padding-left: 20px;
+}
+section>.mus-ph-top>.mus-main>.mus-cover>div>h3{
+    font-size: 22px;
+    color: #646464;
+}
+section>.mus-ph-top>.mus-main>.mus-cover>div>p{
+    font-size: 18px;
+    color: #646464;
+}
+section>.mus-ph-top>.mus-main>.mus-word{
+    padding-top: 30px;
+}
+section>.mus-ph-top>.mus-main>.mus-word>p{
+    font-size: 16px;
+    color: #757575;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+
 @media screen and (max-width:785px){
     section>.mus-bot{
         height: 50px;
@@ -230,6 +276,7 @@ section>.mus-ph-bot>.rt P{
     section>.mus-pc-bot{
         display: none;
     }
+    section>.mus-ph-top,
     section>.mus-ph-bot{
         display: block;
     }
