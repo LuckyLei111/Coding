@@ -21,4 +21,7 @@ $.ajax({
 function setDate(ret) {
     var moData = ret.subjects;
     console.log(moData);
+    for (var vel in moData) {
+        console.log(moData[vel]);
+    }
 }
