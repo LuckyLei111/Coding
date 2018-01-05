@@ -5,7 +5,6 @@ $('footer div').click(function(){
 })
 //tab切换
 
-
 $.ajax({
     url:'http://api.douban.com/v2/movie/top250',
     type:'GET',
@@ -19,8 +18,6 @@ $.ajax({
 }).fail(function() {
     console.log('Error')   
 });
-
-
 
 function setDate(ret) {
     var moData = ret.subjects;
@@ -45,5 +42,4 @@ function setDate(ret) {
         $('#top250').append(strVar);
     }
     $('#top250').append(mloading);
-    console.log($('.loading').scrollTop());
 }

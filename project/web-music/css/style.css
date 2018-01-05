@@ -193,8 +193,8 @@ section>.mus-ph-bot{
     display: none;
 }
 section>.mus-ph-bot>.lt{
-    width: 70px;
-    padding: 11px 0 11px 10px;
+    width: 90px;
+    padding: 13px 0 13px 10px;
 }
 section>.mus-ph-bot>.lt>ul>li{
     float: left;
@@ -205,17 +205,17 @@ section>.mus-ph-bot>.lt>ul>li{
 }
 section>.mus-ph-bot>.lt>ul>li>a{
     display: inline-block;
-    width: 28px;
-    line-height: 26px;
+    width: 34px;
+    line-height: 32px;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     border: 1px solid #646464;
     box-sizing: border-box;
     border-radius: 20px;
 }
 section>.mus-ph-bot>.rt{
-    width: calc(100% - 100px);
+    width: calc(100% - 110px);
     padding-top: 4px;
     padding-left: 10px;
 }
@@ -231,6 +231,7 @@ section>.mus-ph-bot>.rt P{
 }
 section>.mus-ph-top{
     padding-top: 20px;
+    display: none;
 }
 section>.mus-ph-top>.mus-main{
     padding: 10px;
@@ -242,8 +243,8 @@ section>.mus-ph-top>.mus-main>.mus-cover{
 section>.mus-ph-top>.mus-main>.mus-cover>img{
     display: block;
     float: left;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
 }
 section>.mus-ph-top>.mus-main>.mus-cover>div{
     padding-left: 20px;
@@ -270,7 +271,7 @@ section>.mus-ph-top>.mus-main>.mus-word>p{
 
 @media screen and (max-width:785px){
     section>.mus-bot{
-        height: 50px;
+        height: 60px;
     }
     section>.mus-pc-top,
     section>.mus-pc-bot{
@@ -281,6 +282,6 @@ section>.mus-ph-top>.mus-main>.mus-word>p{
         display: block;
     }
     section>.mus-top{
-        height: calc(100% - 50px);
+        height: calc(100% - 80px);
     }
 }
