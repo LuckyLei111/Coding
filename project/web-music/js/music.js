@@ -9,3 +9,17 @@ $('.mus_play').on('click', function (event){
         $('.audio').trigger('pause');
     }
 });
+$.ajax({
+    url:"music.json",
+    type:'GET',
+    data:{
+        
+    },
+    dataType:'json'
+}).done(function(){
+
+}).fail(function(){
+
+}).always(function(){
+
+})
