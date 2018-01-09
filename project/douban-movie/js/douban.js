@@ -19,7 +19,6 @@ $.ajax({
 }).fail(function () {
     console.log('Error')
 });
-
 // function setDate(ret) {
 //     var moData = ret.subjects;
 //     var mloading = "";
@@ -86,6 +85,16 @@ function setDate(data) {
             })
             return StarringArr.join('、');
         })
-        $('section').eq(0).append($node);
+        $('#top250 .loading').before($node);
     });
 }
+$('section').on('scroll',function(){
+    var loadTop = $('.loading').offset().top;
+    var winHeight = $('section').height();
+    var loadHeight = $('.loading').height();
+    if(loadTop < winHeight + loadHeight){
+        console.log('true');
+    }else{
+        console.log('false');
+    }
+})
