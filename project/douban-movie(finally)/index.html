@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>豆瓣移动端</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_440195_fw8hsnrso53wstt9.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+</head>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body,main{
+        height: 100%;
+    }
+    body{
+        position: relative;
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45px;
+        background: #aeaeae;
+        color: #ffffff;
+
+    }
+    footer div{
+        width: 33.3%;
+        float: left;
+        padding-top: 3px;
+    }
+     footer .active{
+        color: #fe3d00;
+    }
+    footer div span{
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    main section{
+        width: 100%;
+        height: calc(100% - 45px);
+        box-sizing: border-box;
+        padding: 10px;
+        overflow:auto;
+    }
+    main section .item{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed rgb(170, 170, 170);
+        box-sizing: border-box;
+    }
+    main section .item a{
+        display: flex;
+        text-decoration: none;
+    }
+    main section .item .cover{
+        width: 70px;
+    }
+    main section .item .cover img{
+        width: 70px;
+    }
+    main section .item .detail{
+        padding-left: 10px;
+        color: #5e5e5e;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    main section .item .detail h2{
+        font-size: 14px;
+    }
+    main section{
+        display: none;
+    }
+    main section:first-child{
+        display: block;
+    }
+    .search-top{
+        width: 100%;
+        position: relative;
+    }
+    .search-top .botton{
+        position: absolute;
+        right: 0;
+        padding: 8px 10px;
+        font-size: 12px;
+        background: #ffa700;
+        border-radius: 4px;
+        color: #fff;
+        
+    }
+    
+    .search-top input{
+        width: calc(100% - 50px);
+        border: none;
+        background: #dbdbdb;
+        height: 32px;
+        box-sizing: border-box;
+        padding: 0 8px;
+        border-radius: 4px;
+        outline: none;
+    }
+    .loading{
+        text-align: center;
+        padding-top: 10px;
+    }
+    .loading .iconfont{
+        display: inline-block;
+        animation: 1s rotate linear infinite;
+    }
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg);  }
+    }
+    </style>
+<body>
+    <main>
+         <section id="top250">
+            <div class="loading">
+                 <span class="iconfont icon-loading"></span>
+            </div>
+         </section>
+         <section id="beimei">
+            <!-- <div class="item">
+                <a href="#">
+                    <div class="cover"><img src="http://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910830216.jpg" alt=""></div>
+                    <div class="detail">
+                        <h2>千里千寻</h2>
+                        <div><span>9.2</span>评分/<span>88888</span>收藏</div>
+                        <div><span class="year">2001</span>/<span class="type">剧情/动漫</span></div>
+                        <div>导演：<span>宫崎骏</span></div>
+                        <div>主演：<span>柊瑠美、入野自由、夏木真理</span></div>
+                    </div>
+                </a>
+             </div> -->
+             2
+            <div class="loading">
+                <span class="iconfont icon-loading"></span>
+            </div>
+         </section>
+         <section id="search">
+            <div class="search-top">
+                 <input type="text" placeholder="搜索电影"><span class="botton">搜索</span>
+            </div>
+            <!-- <div class="item">
+                <a href="#">
+                    <div class="cover"><img src="http://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910830216.jpg" alt=""></div>
+                    <div class="detail">
+                        <h2>千里千寻</h2>
+                        <div><span>9.2</span>评分/<span>88888</span>收藏</div>
+                        <div><span class="year">2001</span>/<span class="type">剧情/动漫</span></div>
+                        <div>导演：<span>宫崎骏</span></div>
+                        <div>主演：<span>柊瑠美、入野自由、夏木真理</span></div>
+                    </div>
+                </a>
+            </div> -->
+            3
+         </section>
+    </main>
+    <footer>
+        <div class="active">
+            <span class="iconfont icon-paihang"></span>
+            <span>Top250</span>
+        </div>
+        <div>
+            <span class="iconfont icon-beimei"></span>
+            <span>北美</span>
+        </div>
+        <div>
+            <span class="iconfont icon-search"></span>
+            <span>搜索</span>
+        </div>
+    </footer>
+    <script src="js/douban.js"></script>
+</body>
+</html>
