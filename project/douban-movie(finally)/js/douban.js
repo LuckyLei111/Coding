@@ -60,4 +60,5 @@ var app = {
         })
     }
 }
+
 app.init();
