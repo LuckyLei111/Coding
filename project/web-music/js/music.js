@@ -10,16 +10,13 @@ $('.mus_play').on('click', function (event){
     }
 });
 $.ajax({
-    url:"music.json",
+    url:"./js/music.json",
     type:'GET',
-    data:{
-        
-    },
     dataType:'json'
-}).done(function(){
-
+}).done(function(ret){
+    console.log(ret)
 }).fail(function(){
-
+    
 }).always(function(){
-
+    
 })

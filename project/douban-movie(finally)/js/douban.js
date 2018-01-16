@@ -2,7 +2,7 @@ var top250 = {
     init:function(){
         console.log('top250 ok');
         this.$element = $('#top250');
-        this._index = 0
+        this._index = 20
         this.bind();
         //初始化
     },
@@ -21,7 +21,7 @@ var top250 = {
             },
             dataType:'jsonp'
         }).done(function(ret){
-            callback(ret);
+            console.log(ret)
         }).fail(function(){
             console.log('Err')
         })
