@@ -59,11 +59,7 @@ var top250 = {
     bind:function(){
         console.log('bind ok');
         var _this = this;
-        this.$element.scroll(function(){
-            if(!_this.isFinish && dateItem.isLoading(_this.$element,_this.$cont)){
-                _this.start();
-            }
-        })
+        _this.start();
     },
     start: function () {
         var _this = this
