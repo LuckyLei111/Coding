@@ -53,13 +53,19 @@ var top250 = {
         this.$cont = $('#top250 .cont');
         this.index = 0
         this.isFinish = false;
-        this.bind();
+        this.isLoading = false;
+        // this.bind();
+        // this.start();
         //初始化
     },
     bind:function(){
         console.log('bind ok');
         var _this = this;
-        _this.start();
+        this.$element.scroll(function(){
+            if (!_this.isFinish && dateItem.isLoading(_this.$element, _this.$cont)) {
+                _this.start();
+            };
+        });
     },
     start: function () {
         var _this = this
@@ -70,6 +76,8 @@ var top250 = {
     getData:function(callback){
         console.log('getDate ok');
         var _this = this;
+        if(_this.isLoading)return
+        _this.isLoading = true;
         $.ajax({
             url: 'http://api.douban.com/v2/movie/top250',
             type:'GET',
@@ -78,19 +86,22 @@ var top250 = {
             },
             dataType:'jsonp'
         }).done(function(ret){
-            _this.index+=10;
+            _this.index += 10;
             if(_this.index >=ret.total){
                 _this.isFinish = true;
             }
+            console.log(_this.index);
             callback && callback(ret);
         }).fail(function(){
             console.log('Err')
+        }).always(function(){
+            _this.isLoading = false;
         })
     },
     render:function(data){
         var _this = this;
-        data.subjects.forEach(function(movie){
-            _this.$cont.append(dateItem.createNode(movie));
+        data.subjects.forEach(function(data){
+            _this.$cont.appendTo(dateItem.createNode(data));
         });
     }
 }
@@ -98,8 +109,32 @@ var top250 = {
 var beimei = {
     init:function(){
         console.log('beimei ok');
+        this.$element = $('#beimei')
+        this.$cont = $('#beimei .cont');
+        this.bind();
+        this.start();
+    },
+    bind:function(){
+        console.log('biemei bind ok')
+    },
+    start:function(){
+        console.log('beimei start ok')
+        this.getDate();
+    },
+    getDate:function(){
+        console.log('getDate ok')
+        $.ajax({
+            url: 'http://api.douban.com/v2/movie/us_box',
+            type: 'GET',
+            dataType: 'jsonp'
+        }).done(function(ret){
+            console.log(ret);
+        }).fail(function(){
+            
+        })
     }
 }
+
 var ssuo = {
     init:function(){
         console.log('ssuo ok');
