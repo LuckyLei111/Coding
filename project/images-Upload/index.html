@@ -10,11 +10,12 @@
 <body>
     <div>
         <div id="uploadForm">
-            <input id="file" type="file" />
+            <input id="fileImage" type="file" size="30" name="fileselect[]" multiple="2" accept="image/jpeg,image/png,image/gif">
             <button id="upload" type="button">upload</button>
         </div>
     </div>
     <script>
+        //FormData
         $('#file').on('change',function(){
             console.log('ok');
         });

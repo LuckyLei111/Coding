@@ -1,3 +1,12 @@
+//音乐播放器需要实现的功能
+//1.播放音乐，暂停音乐。
+//2.点击播放音乐时需要实现的功能。
+//  1.进度条
+//  2.时间
+//3.列表和歌词的转换
+//4.歌曲获取并添加到列表
+//5.音量可调节大小
+
 $('.mus_play').on('click', function (event){
     event.preventDefault();
     //$('.audio').trigger('play');
@@ -9,6 +18,7 @@ $('.mus_play').on('click', function (event){
         $('.audio').trigger('pause');
     }
 });
+
 $.ajax({
     url:"./js/music.json",
     type:'GET',
@@ -18,15 +28,6 @@ $.ajax({
 }).fail(function(){
     console.log('Error');
 })
-
-//音乐播放器需要实现的功能
-//1.播放音乐，暂停音乐。
-//2.点击播放音乐时需要实现的功能。
-//  1.进度条
-//  2.时间
-//3.列表和歌词的转换
-//4.歌曲获取并添加到列表
-//5.音量可调节大小
 
 var app = {
     init:function(){
@@ -41,5 +42,6 @@ var app = {
             $(this).addClass('active').siblings().removeClass('active');
         })
     }
-}
+};
+
 app.init();
