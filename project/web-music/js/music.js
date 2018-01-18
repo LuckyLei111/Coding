@@ -30,11 +30,16 @@ $.ajax({
 
 var app = {
     init:function(){
-        console.log('app ok')
+        console.log('app ok');
+        this.list = $('.auther .mus-list');
         this.bind();
     },
     bind:function(){
         console.log('bind ok')
+        var _this = this;
+        this.list.on('click',function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
     }
 }
 app.init();

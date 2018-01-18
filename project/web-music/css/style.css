@@ -166,8 +166,15 @@ section>.mus-pc-bot>.rt>.progress>.time-pro{
 section>.mus-pc-bot>.rt>.progress>.time-pro>.auther{
     float: right;
 }
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>span{
+    display: inline-block;
+    margin: 0 5px;
+}
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.active{
+    color: rgb(17, 17, 17);
+}
 section>.mus-pc-bot>.rt>.progress>.time-pro>.auther i{
-    font-size: 20px;
+    font-size: 18px;
     color: #a1a1a1;
 }
 section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume{
