@@ -77,15 +77,26 @@ section>.mus-pc-top>.mus-main>.mus-cover>.mus-name>h4{
     color: #616161;
 }
 section>.mus-pc-top>.mus-main>.mus-word{
-    padding: 40px 20px 0;
+    padding: 0 20px;
     width: calc(100% - 400px);
     font-size: 18px;
     color: #646464;
-    text-align: center;
+}
+section>.mus-pc-top>.mus-main>.mus-word>.mus-list>ul>li{
+    width: 300px;
+    margin: 0 auto;
+    color: #646464;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+}
+section>.mus-pc-top>.mus-main>.mus-word>.mus-list>ul>li:hover{
+    box-sizing: border-box;
+    border-bottom: 1px dashed #888888;
+    background: rgba(107, 107, 107, 0.3);
 }
 
 /*手机底部*/
-
 section>.mus-bot{
     width: 100%;
     height: 80px;
@@ -186,7 +197,6 @@ section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.volume>.vol-box>.vol-progre
     position: absolute;
     width: 10px;
 }
-
 /*phone*/
 section>.mus-ph-bot{
     width: 100%;
