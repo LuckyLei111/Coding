@@ -82,6 +82,13 @@ section>.mus-pc-top>.mus-main>.mus-word{
     font-size: 18px;
     color: #646464;
 }
+section>.mus-pc-top>.mus-main>.mus-word>div{
+    display: none;
+}
+section>.mus-pc-top>.mus-main>.mus-word>.mus-w>p{
+    text-align: center;
+}
+
 section>.mus-pc-top>.mus-main>.mus-word>.mus-list>ul>li{
     width: 300px;
     margin: 0 auto;
@@ -90,6 +97,7 @@ section>.mus-pc-top>.mus-main>.mus-word>.mus-list>ul>li{
     height: 32px;
     line-height: 32px;
 }
+
 section>.mus-pc-top>.mus-main>.mus-word>.mus-list>ul>li:hover{
     box-sizing: border-box;
     border-bottom: 1px dashed #888888;
@@ -170,8 +178,8 @@ section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>span{
     display: inline-block;
     margin: 0 5px;
 }
-section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.active{
-    color: rgb(17, 17, 17);
+section>.mus-pc-bot>.rt>.progress>.time-pro>.auther>.active i{
+    color: #2b2b2b;
 }
 section>.mus-pc-bot>.rt>.progress>.time-pro>.auther i{
     font-size: 18px;

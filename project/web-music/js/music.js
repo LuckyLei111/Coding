@@ -7,39 +7,58 @@
 //4.歌曲获取并添加到列表
 //5.音量可调节大小
 
-$('.mus_play').on('click', function (event){
-    event.preventDefault();
-    //$('.audio').trigger('play');
-    if ($('.mus_play').hasClass('icon-music_play')) {
-        $('.mus_play').addClass('icon-music_pause').removeClass("icon-music_play");
-        $('.audio').trigger('play');
-    }else{
-        $('.mus_play').addClass('icon-music_play').removeClass("icon-music_pause");
-        $('.audio').trigger('pause');
+var music = {
+    init:function(){
+        console.log('music ok');
+        this.musplay = $('.mus_play');
+        this.bind();
+        this.start();
+    },
+    bind:function(){
+        var _this = this;
+        this.musplay.on('click',function(){
+            event.preventDefault();
+            if(_this.musplay.hasClass('icon-music_play')){
+                _this.musplay.addClass('icon-music_pause').removeClass('icon-music_play');
+                $('audio').trigger('play');
+            }else{
+                _this.musplay.addClass('icon-music_play').removeClass('icon-music_pause');
+                $('.audio').trigger('pause');
+            }
+        });
+    },
+    start:function(){
+        this.getDate();
+    },
+    getDate:function(){
+        $.ajax({
+            url:'./js/music.json',
+            type:'GET'
+        }).done(function(ret){
+            console.log(ret);
+        })
     }
-});
-
-$.ajax({
-    url:"./js/music.json",
-    type:'GET',
-    dataType:'json'
-}).done(function(ret){
-    console.log(ret)
-}).fail(function(){
-    console.log('Error');
-})
-
+}
 var app = {
     init:function(){
         console.log('app ok');
         this.list = $('.auther .mus-list');
+        this.musword = $('.mus-word div');
         this.bind();
+        music.init();
     },
     bind:function(){
-        console.log('bind ok')
+        console.log('bind ok');
         var _this = this;
         this.list.on('click',function(){
-            $(this).addClass('active').siblings().removeClass('active');
+            _this.musword.css('display','none');
+            if ($('.auther .mus-list').hasClass('active')){
+                $('.auther .mus-list').removeClass('active');
+                _this.musword.eq(0).css('display','block');
+            }else{
+                $('.auther .mus-list').addClass('active');
+                _this.musword.eq(1).css('display', 'block');
+            }
         })
     }
 };
