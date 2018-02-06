@@ -4,9 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tab组件</title>
+    <title>Tab</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{font-family: Arial;}
+    ul li{
+        list-style: none;
+    }
+    .clearfix:after {
+        content: "020";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    .clearfix {
+        zoom: 1;
+    }
+    .tab {
+        width: 300px;
+        margin: 0 auto;
+        border: 1px solid #666666;
+    }
+    .tab ul li {
+        float: left;
+        width: 50%;
+    }
+    .tab .tab_nav li{
+        text-align: center;
+        box-sizing: border-box;
+        border-bottom: 1px solid #666666;
+        border-right: 1px solid #666666;
+    }
+    .tab .tab_nav .active{
+        background: #666666;
+        color: #ffffff;
+    }
+    .tab .tab_nav li:last-child{
+        border-right: none;
+    }
+    .tab ul:last-child li{
+        width: 100%;
+    }
+    .tab .tab_cont li{
+        display: none;
+    }
+    .tab .tab_cont .active{
+        display: block;
+    }
+    </style>
 </head>
 <body>
+    <div class="tab">
+        <ul class="tab_nav clearfix">
+            <li class="active">a1</li>
+            <li>a2</li>      
+        </ul>
+        <ul class="tab_cont clearfix">
+            <li class="active">content1</li>
+            <li>content2</li>
+        </ul>
+    </div>
     <script src="js/tab-component.js"></script>
 </body>
 </html>
