@@ -26,8 +26,9 @@
     }
     .tab {
         width: 300px;
-        margin: 0 auto;
-        border: 1px solid #666666;
+        margin: 50px auto 0;
+        /*border: 1px solid #666666;*/
+        box-shadow: 0 0 14px 2px #cccccc;
         border-radius: 5px;
         overflow: hidden;
     }
@@ -36,22 +37,25 @@
         width: 50%;
     }
     .tab .tab_nav li{
+        line-height: 30px;
         text-align: center;
         box-sizing: border-box;
-        border-bottom: 1px solid #666666;
-        border-right: 1px solid #666666;
+        border-bottom: 1px solid #c0c0c0;
+        border-right: 1px solid #c0c0c0;
     }
     .tab .tab_nav .active{
-        background: #666666;
+        background: #cccccc;
         color: #ffffff;
     }
     .tab .tab_nav li:last-child{
         border-right: none;
     }
     .tab ul:last-child li{
-        width: 100%;
+        width: calc(100% - 10px);
     }
     .tab .tab_cont li{
+        height: 50px;
+        padding: 5px;
         display: none;
     }
     .tab .tab_cont .active{
@@ -66,8 +70,8 @@
             <li>a2</li>      
         </ul>
         <ul class="tab_cont clearfix">
-            <li class="active">content1</li>
-            <li>content2</li>
+            <li class="active">content_1</li>
+            <li>content_2</li>
         </ul>
     </div>
     <script src="js/tab-component.js"></script>

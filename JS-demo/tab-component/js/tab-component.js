@@ -11,7 +11,7 @@ nTab.prototype = {
     bind(){
         this.cliTab.forEach((cTab) => {
             var _this = this;
-            cTab.onclick = function(e){
+            cTab.onmouseover = function(e){
                 let target = e.target;
                 let index = [].indexOf.call(_this.cliTab,target);
                 _this.cliTab.forEach((li) => {
@@ -26,4 +26,4 @@ nTab.prototype = {
         });
     }
 }
-var tab = new nTab(document.querySelector('.tab'));
+let tab = new nTab(document.querySelector('.tab'));
