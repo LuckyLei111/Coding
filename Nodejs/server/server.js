@@ -36,12 +36,6 @@ staticRoot()
 
 
 
-
-
-
-
-
-
 var server = http.createServer(function(req,res) {
     staticRoot(path.join(__dirname, 'static'), req ,res)
 })

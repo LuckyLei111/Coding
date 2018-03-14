@@ -8,7 +8,7 @@ document.addEventListener('mousemove', function (evt) {
     var winHeight = window.innerHeight / 2;
     var rx = x - winWidth;
     var ry = winHeight - y;
-    var max = 30;
+    var max = 20;
     var dx = ($('.box').getBoundingClientRect().width / max) * (rx / -winWidth);
     var dy = ($('.box').getBoundingClientRect().height / max) * (ry / winHeight);
     $('.box').style['transform'] = 'translate(' + dx + 'px,' + dy + 'px)';
