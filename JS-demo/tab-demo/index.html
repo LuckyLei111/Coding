@@ -1,18 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0;}
+ul,li{ list-style:none;}
+h2{  text-align:center; font-size:40px; padding-top:50px;}
+.tab-box{ width:600px; border:1px solid #000; margin:20px auto;}
+.tab-nav{ height:40px; border-bottom:2px solid #eee;}
+.tab-nav ul li{ display:block; float:left; height:40px; margin-right:2px; background:#eee; text-align:center; line-height:40px; width:100px; font-size:14px; cursor:pointer;}
+.tab-nav ul li.active{background:#444BCC; color:#fff; font-weight:bold;}
+.tab-item{display:none;}
+.tab-item p{padding:50px; font-size:24px;}
+</style>
+<script>
+function setTab(name,cursel,n){
+	for(i=1;i<=n;i++){
+		var menu= document.getElementById(name+i);
+		var con=document.getElementById("con_"+name+"_"+i);
+		menu.className=i==cursel ? "active" : "";
+		con.style.display=i==cursel?"block":"none";
+	}
+}
+</script>
 </head>
+
 <body>
-    <div class="m-tab">
-        <div class="t-tab">
-            <ul>
-                <li></li>
-            </ul>
-        </div>
+
+<h2>滑动切换1</h2>
+<div class="tab-box">
+	<div class="tab-nav">
+    	<ul>
+        	<li id="a1" class="active" onMouseOver="setTab('a' ,1 , 4)">标题1</li>
+            <li id="a2" onMouseOver="setTab('a' ,2 , 4)">标题2</li>
+            <li id="a3" onMouseOver="setTab('a' ,3 , 4)">标题3</li>
+            <li id="a4" onMouseOver="setTab('a' ,4 , 4)">标题4</li>
+        </ul>
     </div>
+    <div class="tab-con">
+    	<div class="tab-item" id="con_a_1" style="display:block;"><p>切换1板块1</p></div>
+        <div class="tab-item" id="con_a_2"><p>切换1板块2</p></div>
+        <div class="tab-item" id="con_a_3"><p>切换1板块3</p></div>
+        <div class="tab-item" id="con_a_4"><p>切换1板块4</p></div>
+    </div>
+</div>
+
+
+<h2>滑动切换2</h2>
+<div class="tab-box">
+	<div class="tab-nav">
+    	<ul>
+        	<li id="b1" class="active" onMouseOver="setTab('b' ,1 , 5)">标题1</li>
+            <li id="b2" onMouseOver="setTab('b' ,2 , 5)">标题2</li>
+            <li id="b3" onMouseOver="setTab('b' ,3 , 5)">标题3</li>
+            <li id="b4" onMouseOver="setTab('b' ,4 , 5)">标题4</li>
+            <li id="b5" onMouseOver="setTab('b' ,5 , 5)">标题5</li>
+        </ul>
+    </div>
+    <div class="tab-con">
+    	<div class="tab-item" id="con_b_1" style="display:block;"><p>切换2板块1</p></div>
+        <div class="tab-item" id="con_b_2"><p>切换2板块2</p></div>
+        <div class="tab-item" id="con_b_3"><p>切换2板块3</p></div>
+        <div class="tab-item" id="con_b_4"><p>切换2板块4</p></div>
+        <div class="tab-item" id="con_b_5"><p>切换2板块5</p></div>
+    </div>
+</div>
+
+<h2>滑动切换3</h2>
+<div class="tab-box">
+	<div class="tab-nav">
+    	<ul>
+        	<li id="ccc1" onMouseOver="setTab('ccc' ,1 , 5)">标题1</li>
+            <li id="ccc2" onMouseOver="setTab('ccc' ,2 , 5)">标题2</li>
+            <li id="ccc3" class="active" onMouseOver="setTab('ccc' ,3 , 5)">标题3</li>
+            <li id="ccc4" onMouseOver="setTab('ccc' ,4 , 5)">标题4</li>
+            <li id="ccc5" onMouseOver="setTab('ccc' ,5 , 5)">标题5</li>
+        </ul>
+    </div>
+    <div class="tab-con">
+    	<div class="tab-item" id="con_ccc_1"><p>切换3板块1</p></div>
+        <div class="tab-item" id="con_ccc_2"><p>切换3板块2</p></div>
+        <div class="tab-item" id="con_ccc_3" style="display:block;"><p>切换3板块3</p></div>
+        <div class="tab-item" id="con_ccc_4"><p>切换3板块4</p></div>
+        <div class="tab-item" id="con_ccc_5"><p>切换3板块5</p></div>
+    </div>
+</div>
+
+<h2>点击切换1</h2>
+<div class="tab-box">
+	<div class="tab-nav">
+    	<ul>
+        	<li id="dj1" class="active" onclick="setTab('dj' ,1 , 4)">标题1</li>
+            <li id="dj2" onclick="setTab('dj' ,2 , 4)">标题2</li>
+            <li id="dj3" onclick="setTab('dj' ,3 , 4)">标题3</li>
+            <li id="dj4" onclick="setTab('dj' ,4 , 4)">标题4</li>
+        </ul>
+    </div>
+    <div class="tab-con">
+    	<div class="tab-item" id="con_dj_1" style="display:block;"><p>点击切换1板块1</p></div>
+        <div class="tab-item" id="con_dj_2"><p>点击切换1板块2</p></div>
+        <div class="tab-item" id="con_dj_3"><p>点击切换1板块3</p></div>
+        <div class="tab-item" id="con_dj_4"><p>点击切换1板块4</p></div>
+    </div>
+</div>
 </body>
 </html>
