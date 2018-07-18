@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js表单与v-model基本用法-复选框</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="checked" id="checked">
+        <label for="checked">选择状态：{{ checked }}</label>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                checked:true
+            }
+        })
+    </script>
+</body>
+
+</html>

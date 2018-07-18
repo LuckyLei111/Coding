@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue组件通信--编译的作用域</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child-component v-show="showChild"></child-component>
+    </div>
+    <script>
+        Vue.component('child-component',{
+            template:'<div>子组件</div>'
+        });
+
+        var app = new Vue({
+            el:'#app',
+            data:{
+                showChild:true
+            }
+        });
+        //这里的状态showchild绑定的是父组件的数据，如果想要在子组件上绑定 vue.3.4.html
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue的列表渲染</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <div v-for="(item, index) of list" :key="item.id">{{item.text}}___{{index}}</div>
+        <span v-for="(item, index) of list" :key="item.id">{{item.text}}___{{index}}</span> -->
+        <!-- <template v-for="(item, index) of list" :key="item.id">
+            <div>{{item.text}}___{{index}}</div>
+            <span>{{item.text}}</span>
+        </template> -->
+        <div v-for="(item,key,index) of userInfo">{{key}}---{{item}}---{{index}}</div>
+    </div>
+    <script>
+        //push pop shift unshift splice sort reverse    
+        var app = new Vue({
+            el:'#app',
+            data:{
+                // list:[{
+                //     id:"01012001",
+                //     text:"hello"
+                // },{
+                //     id:"13311",
+                //     text:"lucky"
+                // },{
+                //     id:"2121213",
+                //     text:'world'
+                // }]
+                userInfo:{
+                    name:"lucky",
+                    age:10,
+                    gender:"male",
+                    salary:"secret"
+                }
+                //在对象中，也可以通过Vue.set()方法改变对象的内容，或者实例.$set()
+            }
+        })
+    </script>
+</body>
+</html>

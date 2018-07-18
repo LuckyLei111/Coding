@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue组件通信--父链</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <component-a></component-a>
+    </div>
+    <script>
+        Vue.component('component-a',{
+            template:`
+            <button @click="handleEvent">通过父链直接修改数据</button>
+            `,
+            methods:{
+                handleEvent:function(){
+                    this.$parent.message="来自组件a的内容"
+                }
+            }
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:'hello Vue'
+            }
+        })
+    </script>
+</body>
+
+</html>

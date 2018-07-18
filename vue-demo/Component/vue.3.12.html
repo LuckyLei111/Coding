@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue组件高级用法--动态组件</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <component :is="currentView"></component>
+        <button @click="handleChangView('A')">切换A</button>
+        <button @click="handleChangView('B')">切换B</button>
+        <button @click="handleChangView('C')">切换C</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            components:{
+                comA:{
+                    template:'<div>组件A</div>'
+                },
+                comB:{
+                    template:'<div>组件B</div>'
+                },
+                comC:{
+                    template:'<div>组件C</div>'
+                }
+            },
+            data:{
+                currentView:'comA'
+            },
+            methods:{
+                handleChangView:function(component){
+                    this.currentView = 'com' + component;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

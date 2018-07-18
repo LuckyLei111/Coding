@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js表单与v-model基本用法-修饰符</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model.lazy="message">
+        <label>失焦或回车时输出：{{ message }}</label>
+    </div>
+    <script>
+        //与事件的修饰符类似, v-model也有修饰符，用于控制数据同步的时机
+        //使用修饰符(.lazy)会转变为在change事件中的同步，message并不是实时改变的，而是在失焦或按回车时才更新
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message:123
+            }
+        });
+    </script>
+</body>
+
+</html>
