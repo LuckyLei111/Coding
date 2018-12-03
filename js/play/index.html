@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>播放器</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_923372_vvx6yfrerp.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="cover"></div>
+    <div class="container">
+        <div class="musicBox">
+            <div class="player clearfix">
+                <div class="control fl">
+                    <span class="pev"><i class="iconfont icon-pevious"></i></span>
+                    <span class="play"><i class="iconfont icon-timeout"></i></span>
+                    <span class="next"><i class="iconfont icon-next"></i></span>
+                </div>
+                <div class="info fl">
+                    <p><span class="title">歌曲</span> - <span class="author">歌手</span></p>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="bar">
+                    <div class="progress-total"></div>
+                    <div class="progress-now"></div>
+                </div>
+                <div class="time clearfix">
+                    <p class="now fl">00:00</p>
+                    <p class="duration fr">00:00</p>
+                </div>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="#">
+                        <p><span class="title">时光行者</span> - <span>汪苏泷</span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        var currentIndex = 0
+        var musicList = []
+        var audioObj = new Audio()
+        audioObj.autoplay = true
+
+        getMusicList(function(list){
+            musicList = list
+            console.log(list);
+            loadMusic(list[currentIndex])
+        })
+
+        audioObj.ontimeupdate = function(){
+            var min = Math.floor(audioObj.duration / 60) + ''
+            var sec = Math.floor(audioObj.duration%60) + ''
+            min = min.length ===2 ? min : '0' + min
+            sec = sec.length===2 ? sec : "0" + sec
+            $('.time .duration').innerText = min + ':' + sec
+
+            clock = setInterval(function(){
+                $('.progress .progress-now').style.width = (audioObj.currentTime/audioObj.duration)*100 + '%'
+                var min = Math.floor(audioObj.currentTime / 60) + ''
+                var sec = Math.floor(audioObj.currentTime%60) + ''
+                min = min.length ===2 ? min : '0' + min
+                sec = sec.length===2 ? sec : "0" + sec
+                $('.time .now').innerText = min +":"+ sec
+            },1000)
+        }
+
+        audioObj.onpause = function(){
+            clearInterval(clock)
+        }
+
+        audioObj.onended = function(){
+            currentIndex = (++currentIndex) % musicList.length
+            loadMusic(musicList[currentIndex])
+        }
+        
+        $('.control .play').onclick = function(){
+            if(audioObj.paused){
+                audioObj.play()
+                this.querySelector('.iconfont').classList.remove('icon-play')
+                this.querySelector('.iconfont').classList.add('icon-timeout')
+            }else{
+                audioObj.pause()
+                this.querySelector('.iconfont').classList.remove('icon-timeout')
+                this.querySelector('.iconfont').classList.add('icon-play')
+            }
+        }
+
+        $('.control .next').onclick = function(){
+            currentIndex = (++currentIndex) % musicList.length
+            loadMusic(musicList[currentIndex])
+        }
+        $('.control .pev').onclick = function(){
+            currentIndex = (musicList.length + (--currentIndex)) % musicList.length
+            loadMusic(musicList[currentIndex])
+        }
+
+        $('.progress .bar').onclick = function(e){
+            var percent = e.offsetX / parseInt(getComputedStyle(this).width)
+            audioObj.currentTime = audioObj.duration * percent
+        }
+
+        function $(selector){
+            return document.querySelector(selector)
+        }
+
+        function loadMusic(musicObj){
+            console.log(musicObj)
+            $('.player .title').innerText = musicObj.title
+            $('.player .author').innerText = musicObj.author
+            audioObj.src = musicObj.src
+        }
+
+        function getMusicList(callback){
+            var xhr = new XMLHttpRequest()
+            xhr.open('GET', '/music.json', true)
+            xhr.onload = function(){
+                if((xhr.status>=200 && xhr.status<300) || xhr.status===304){
+                    callback(JSON.parse(this.responseText))
+                }else{
+                    console.log('获取数据失败')
+                }
+            }
+            xhr.onerror = function(){
+                console.log('网络异常')
+            }
+            xhr.send()
+        }
+    </script>
+</body>
+</html>

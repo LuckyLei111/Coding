@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+a {
+  color: #636b6f;
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block; }
+
+.cover {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); }
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #636b6f;
+  width: 320px;
+  height: 500px;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  border-radius: 10px;
+  transition: box-shadow 600ms; }
+  .container:hover {
+    box-shadow: 0 0 20px 5px #57ffef40; }
+  .container .musicBox {
+    padding-top: 18px; }
+    .container .musicBox .player {
+      margin-bottom: 15px; }
+      .container .musicBox .player .control {
+        margin: 0 10px; }
+        .container .musicBox .player .control span {
+          display: inline-block;
+          margin: 0 5px; }
+          .container .musicBox .player .control span .iconfont {
+            font-size: 32px; }
+    .container .musicBox .info {
+      margin-left: 10px;
+      font-size: 14px;
+      line-height: 35px; }
+      .container .musicBox .info .iconfont {
+        font-size: 18px; }
+    .container .musicBox .progress {
+      padding: 0 15px; }
+      .container .musicBox .progress .bar {
+        position: relative;
+        margin-bottom: 5px; }
+        .container .musicBox .progress .bar .progress-total {
+          width: 100%;
+          height: 1px;
+          background: #c8deff; }
+        .container .musicBox .progress .bar .progress-now {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 1px;
+          background-image: linear-gradient(to left, #b3ffab 0%, #12fff7 100%);
+          z-index: 1;
+          width: 0%; }
+          .container .musicBox .progress .bar .progress-now::after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: -5px;
+            top: -5px;
+            background: #b3ffab;
+            border-radius: 5px; }
+      .container .musicBox .progress .time {
+        font-size: 12px;
+        line-height: 1.6; }
+    .container .musicBox .list {
+      padding: 0 10px; }
+      .container .musicBox .list li {
+        padding-left: 10px;
+        font-size: 14px;
+        height: 34px;
+        line-height: 34px; }
+        .container .musicBox .list li:hover {
+          background: #e5eefe; }
