@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS3过渡</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .but{
+            display: block;
+            width: 200px;
+            height: 40px;
+            background: #00d9ff;
+            border: none;
+            border-radius: 10px;
+            margin:  50px auto 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            transition-property: all;       
+            transition-duration: 200ms;        /*过渡时间*/
+            transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);     /*过渡效果*/
+            transition-delay: 0ms;
+            box-shadow: 0 10px 20px -6px rgb(255, 96, 96);
+        }
+        .but:hover{
+            margin-top: 48px;
+            box-shadow: 0 16px 20px -6px rgb(255, 166, 166);
+        }
+    </style>    
+<body>
+    <button class="but">按钮</button>
+</body>
+</html>
