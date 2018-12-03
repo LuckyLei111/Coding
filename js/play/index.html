@@ -50,7 +50,6 @@
 
         getMusicList(function(list){
             musicList = list
-            console.log(list);
             loadMusic(list[currentIndex])
         })
 
@@ -111,7 +110,6 @@
         }
 
         function loadMusic(musicObj){
-            console.log(musicObj)
             $('.player .title').innerText = musicObj.title
             $('.player .author').innerText = musicObj.author
             audioObj.src = musicObj.src
@@ -119,7 +117,7 @@
 
         function getMusicList(callback){
             var xhr = new XMLHttpRequest()
-            xhr.open('GET', '/music.json', true)
+            xhr.open('GET', 'music.json', true)
             xhr.onload = function(){
                 if((xhr.status>=200 && xhr.status<300) || xhr.status===304){
                     callback(JSON.parse(this.responseText))
