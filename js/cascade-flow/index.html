@@ -19,6 +19,7 @@
         width: 100px;
         margin: 5px;
         position: absolute;
+        transition: all 400ms;
     }
     </style>
 </head>
@@ -71,6 +72,7 @@
     </div>
 
     <script>
+
         var colCount;
         var colHeightArray = [];
         var imgWidth = $('.container img').outerWidth(true);
@@ -98,6 +100,32 @@
 
             colHeightArray[minIndex] += $(this).outerHeight(true);
         })
+
+        $(window).on('resize', function(){
+            var colCount;
+            var colHeightArray = [];
+            colCount = Math.floor($('.container').width()/$('.container img').outerWidth(true));
+            for(var i = 0; i < colCount; i++){
+                colHeightArray[i] = 0;
+            }
+            $('.container img').each(function(){
+                var minValue = colHeightArray[0]
+                var minIndex = 0;
+                for(var i = 0; i< colCount; i++)
+                {
+                    if(colHeightArray[i]<minValue){
+                        minValue = colHeightArray[i]
+                        minIndex = i
+                    }
+                }
+                $(this).css({
+                    left: minIndex * imgWidth,
+                    top: minValue
+                })
+                colHeightArray[minIndex] += $(this).outerHeight(true);
+            })
+        })
+        // qulow
     </script>
 </body>
 </html>
