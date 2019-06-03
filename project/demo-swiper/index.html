@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1206833_bnikrxo0ru7.css">
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <title>轮播-demo</title>
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .carousel{
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 30px auto 0;
+    overflow: hidden;
+  }
+  .carousel ul,
+  .carousel li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .carousel .img-ct{
+    position: absolute;
+  }
+  .carousel .img-ct::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .carousel .img-ct>li{
+    float: left;
+  }
+  .carousel .img-ct img{
+    width: 100%;
+    height: 100%;
+  }
+  .carousel .arrow{
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    width: 30px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 45px;
+    color: #999;
+    text-decoration: none;
+    opacity: .2;
+    cursor: pointer;
+  }
+  .carousel:hover .arrow{
+    opacity: .8;
+  }
+  .carousel .pre{
+    left: 10px;
+  }
+  .carousel .next{
+    right: 10px;
+  }
+  .carousel .bullet{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-size: 0;
+    z-index: 1;
+    text-align: center;
+  }
+  .carousel .bullet>li{
+    display: inline-block;
+    width: 24px;
+    height: 8px;
+    border-radius: 4px;
+    background: #c3c3c3;
+    margin: 0 3px;
+    cursor: pointer
+  }
+  .carousel .bullet >li.active{
+    background: #6f6f6f;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <ul class="img-ct">
+      <li><img src="https://dummyimage.com/600x400/d6d6d6/0011ff.jpg&text=1"></li>
+      <li><img src="https://dummyimage.com/600x400/d6d6d6/0011ff.jpg&text=2"></li>
+      <li><img src="https://dummyimage.com/600x400/d6d6d6/0011ff.jpg&text=3"></li>
+    </ul>
+    <a class="pre arrow iconfont">&#xe60b;</a>
+    <a class="next arrow iconfont">&#xe60c;</a>
+    <ul class="bullet">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="carousel">
+    <ul class="img-ct">
+      <li><img src="https://dummyimage.com/600x400/d6d6d6/0011ff.jpg&text=1"></li>
+      <li><img src="https://dummyimage.com/600x400/d6d6d6/0011ff.jpg&text=2"></li>
+      <li><img src="https://dummyimage.com/600x400/d6d6d6/0011ff.jpg&text=3"></li>
+    </ul>
+    <a class="pre arrow iconfont">&#xe60b;</a>
+    <a class="next arrow iconfont">&#xe60c;</a>
+    <ul class="bullet">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    function Carousel($ct) {
+      this.init($ct);
+      this.bind();
+    }
+    Carousel.prototype = {
+      // 初始化
+      init: function($ct) {
+        this.$ct = $ct;
+        this.$imgCt   = this.$ct.find('.img-ct')
+        this.$imgs    = this.$ct.find('.img-ct li')
+        this.$preBtn  = this.$ct.find('.pre')
+        this.$nextBtn = this.$ct.find('.next')
+        this.$bullets = this.$ct.find('.bullet li')
+
+        this.imgWidth= this.$imgs.width()
+        this.imgContent = this.$imgs.length
+        this.index = 0
+
+        console.log('init...')
+        this.$imgCt.append(this.$imgs.first().clone())
+        this.$imgCt.prepend(this.$imgs.last().clone())
+        this.$imgCt.width((this.imgContent + 2)*this.imgWidth)
+        this.$imgCt.css('left', -this.imgWidth)
+      },
+      // 逻辑处理
+      bind: function () {
+        var _this = this;
+        this.$preBtn.on('click', function() {
+          _this.playpre()
+        })
+        this.$nextBtn.on('click', function() {
+          _this.playnext()
+        })
+        this.$bullets.on('click', function(){
+          var index = $(this).index()
+          if (_this.index > index) {
+            console.log(_this.index - index)
+            _this.playpre(_this.index - index)
+          }else{
+            console.log(index - _this.index)
+            _this.playnext(index - _this.index)
+          }
+        })
+      },
+      
+      // 下一张轮播图操作逻辑
+      playnext: function(){
+        var _this = this;
+        this.$imgCt.animate({
+          left: '-='+this.imgWidth
+        }, function () {
+          _this.index++
+          if (_this.index === _this.imgContent) {
+            _this.$imgCt.css('left', -_this.imgWidth)
+            _this.index = 0
+          }
+          _this.setBullet()
+        })
+      },
+
+      // 上一张轮播图操作逻辑
+      playpre: function(){
+        var _this = this
+        this.$imgCt.animate({
+          left: '+='+this.imgWidth
+        }, function(){
+          _this.index--
+          if(_this.index < 0) {
+            _this.$imgCt.css('left', -_this.imgWidth * _this.imgContent)
+            _this.index = _this.imgContent - 1
+          }
+          _this.setBullet()
+        })
+      },
+      
+      setBullet: function () {
+        this.$bullets.eq(this.index).addClass('active').siblings().removeClass('active')
+      }
+    }
+    new Carousel($('.carousel').eq(0));
+    new Carousel($('.carousel').eq(1));
+  </script>
+</body>
+</html>

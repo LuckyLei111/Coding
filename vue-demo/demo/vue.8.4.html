@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js表单与v-model基本用法</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="radio" v-model="picked" value="HTML" id="html">
+        <label for="html">HTML</label>
+        <br>
+        <input type="radio" v-model="picked" value="JS" id="js">
+        <label for="js">JavaScript</label>
+        <br>
+        <input type="radio" v-model="picked" value="CSS" id="css">
+        <label for="css">CSS</label>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                picked: 'HTML'
+            }
+        })
+    </script>
+</body>
+
+</html>

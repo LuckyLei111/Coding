@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中使用Js动画与Velocity.js的结合</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+</head>
+<body>
+     <!-- type="transition" -->
+    <div id="app">
+        <button @click="handleClick">切换</button>
+        <transition
+            name="fade"
+            @befor-enter="handleleBeforeEnter"
+            @enter="handleEnter">
+            <div v-show="show">hello world</div>
+        </transition>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                show:true
+            },
+            methods:{
+                handleClick:function(){
+                    this.show = !this.show
+                },
+                handleleBeforeEnter:function(el){
+                    el.style.color="red"
+                },
+                handleEnter:function (el,done) {
+                    setTimeout(() => {
+                        el.style.color="green"
+                    }, 2000);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

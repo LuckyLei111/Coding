@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js表单与v-model基本用法-修饰符（trim）</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model.trim="message">
+        <label>{{ message }}</label>
+    </div>
+    <script>
+        //使用(.trim)，可以自动过滤输入的首尾空格
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message:''
+            }
+        })
+    </script>
+</body>
+
+</html>

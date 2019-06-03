@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue组件细节</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <counter @change="handleChange" ref="one"></counter>
+        <counter @change="handleChange" ref="two"></counter>
+        <div>{{ total }}</div>
+    </div>
+    <script>
+        Vue.component('counter',{
+            template:'<div @click="handleClick">{{number}}</div>',
+            data:function(){
+                return {
+                    number:0
+                }
+            },
+            methods:{
+                handleClick:function(){
+                    this.number++
+                    this.$emit('change')
+                }
+            }
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                total:0
+            },
+            methods:{
+                handleChange:function(){
+                    this.total = this.$refs.one.number + this.$refs.two.number;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

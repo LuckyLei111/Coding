@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_874585_lzt1bmcn5nd.css">
+</head>
+<body>
+    <header>
+        <a class="login iconfont">&#xe606;</a>
+    </header>
+    <main>
+        <div class="filp-modul login">
+            <div class="modul modul-login">
+                <a class="close iconfont">&#xe62c;</a>
+                <div class="tabs">
+                    <a class="login active">登录</a>
+                    <a class="register">注册</a>
+                </div>
+                <div class="content">
+                    <div class="errermsg"></div>
+                    <form action="/" method="post">
+                        <div class="input-field">
+                            <i class="icon iconfont">&#xe7ae;</i>
+                            <input type="text" name="username">
+                        </div>
+                        <div class="input-field">
+                            <i class="icon iconfont">&#xe61d;</i>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" value="登录">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modul modul-register">
+                <a class="close iconfont">&#xe62c;</a>
+                <div class="tabs">
+                    <a class="login">登录</a>
+                    <a class="register active">注册</a>
+                </div>
+                <div class="content">
+                    <div class="errermsg"></div>
+                    <form action="/" method="post">
+                        <div class="input-field">
+                            <i class="icon iconfont">&#xe7ae;</i>
+                            <input type="text" name="username">
+                        </div>
+                        <div class="input-field">
+                            <i class="icon iconfont">&#xe61d;</i>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="input-field">
+                            <i class="icon iconfont">&#xe61d;</i>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" value="注册">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+    function $(selector){
+        return document.querySelector(selector);
+    }
+    function $$(selector){
+        return document.querySelectorAll(selector);
+    }
+
+    // $$('.modul .login').forEach(function(node){
+    //     node.onclick = function (){
+    //         $('.filp-modul').classList.remove('register');
+    //         $('.filp-modul').classList.add('login');
+    //     }
+    // })
+    // $$('.modul .register').forEach(function(node){
+    //     node.onclick = function (){
+    //         $('.filp-modul').classList.remove('login');
+    //         $('.filp-modul').classList.add('register');
+    //     }
+    // })
+
+    $('header .login').onclick = function(e){
+        e.stopPropagation();
+        $('.filp-modul').classList.add('show');
+    }
+    document.addEventListener('click',function(){
+        $('.filp-modul').classList.remove('show');
+    })
+    $('.filp-modul').addEventListener('click',function(e){
+        e.stopPropagation();
+        if(e.target.classList.contains('register')){
+            $('.filp-modul').classList.remove('login');
+            $('.filp-modul').classList.add('register');
+        }
+        if(e.target.classList.contains('login')){
+            $('.filp-modul').classList.remove('register');
+            $('.filp-modul').classList.add('login');
+        }
+        if(e.target.classList.contains('close')){
+            $('.filp-modul').classList.remove('show');
+        }
+    })
+    // 表单提交
+    </script>
+</body>
+</html>

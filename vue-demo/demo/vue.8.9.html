@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js表单与v-model基本用法</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <select v-model="selected">
+            <option v-for="option in options" :value="option.value">{{ option.text }}</option>
+        </select>
+        <p>选择的项是：{{ selected }}</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                options:[
+                    {
+                        text:'html',
+                        value:'html'
+                    },
+                    {
+                        text:'JavaScript',
+                        value:'js'
+                    },
+                    {
+                        text:'CSS',
+                        value:'css'
+                    }
+                ],
+                selected:'js'
+            }
+        })
+    </script>
+</body>
+
+</html>

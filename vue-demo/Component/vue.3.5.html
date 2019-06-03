@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue组件通信--slot用法</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child-component>
+            <p>分发的内容</p>
+            <P>更多分发的内容</P>
+        </child-component>
+    </div>
+    <script>
+        /*子组件模板child-component的模板内定义了一个slot元素，在父组件没有使用slot时，会渲染这段默认的文本*/
+        Vue.component('child-component',{   
+            template:`
+            <div>
+                <slot>
+                    <p>如果父组件没有插入内容，我将默认出现</p>
+                </slot>
+            </div>
+            `
+        });
+        var app = new Vue({
+            el:'#app'
+        })
+    </script>
+</body>
+
+</html>

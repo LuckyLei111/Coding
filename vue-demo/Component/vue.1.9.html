@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue组件基础(单向数据流)</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <my-component :init-count="123456"></my-component>
+    </div>
+    <script>
+        /*vue 2.x通过props传递数据时单向的，也就是父组件数据变化时会传递给子组件，但是反过来不行，而在vue 1.x里提供了.sync修饰符来支持双向绑定*/
+        Vue.component('my-component',{
+            props:['initCount'],
+            template:'<div>{{ count }}</div>',
+            data:function(){
+                return {
+                    count:this.initCount
+                }
+            }
+        })
+        var app = new Vue({
+            el:'#app'
+        })
+    </script>
+</body>
+
+</html>

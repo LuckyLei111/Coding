@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body,ul,li,a,h1,h2,h3,h4,h5,h6{
+    font-family: "微软雅黑";
+    font-size: 16px;
+    font-weight: initial;
+    list-style: none;
+    text-decoration: none;
+    color: #191919;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.fr{float: right;}
+.fl{float: left;}
+.clearfix:after{
+    content:"";
+    height:0;
+    line-height:0;
+    display:block;
+    visibility:hidden;
+    clear:both;
+}
+.clearfix{zoom:1;}
+
+header{
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    .head{
+        max-width: 1024px;
+        margin: 0 auto;
+        line-height: 80px;
+        .logo{
+            width: 80px;
+            text-align: center;
+        }
+        .nav{
+            width: 600px;
+            margin-left: calc(100% - 680px);
+            li{
+                float: left;
+                width: calc((100% - 100px)/5);
+                text-align: center;
+                a{
+                    display: block;
+                }
+                a:hover{
+                    color: #999;
+                    background: rgba(0,0,0,.2);
+                }
+            }
+        }
+        .m-menu{
+            display: none;
+            i{
+                padding: 10px 20px;
+            }
+        }
+    }
+}
+
+.con-sh{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .m-con{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translate(0, -0%);
+        transition: all 1000ms;
+        .item{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 28px;
+            color: #fff;
+            p{
+                padding-top: 80px;
+            }
+        }
+        .item1{
+            background: #888;
+        }
+        .item2{
+            background: #666;
+        }
+        .item3{
+            background: #444;
+        }
+        .item4{
+            background: #222;
+        }
+    }
+}
+.progressbar{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    i{
+        margin:5px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+    }
+}

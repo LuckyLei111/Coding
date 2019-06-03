@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue组件通信--单个Slot用法</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <app>
+            {{message}}
+        </app>
+    </div>
+    <script>
+        Vue.component('app',{
+            template:`
+            <div>
+                <h1>hello {{ message }}</h1>
+                <slot></slot>
+            </div>
+            `,
+            data:function(){
+                return {
+                    message:'子组件'
+                }
+            }
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:'父组件'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <a v-bind:href="url">百度</a>
+        <img v-bind:src="imgUrl">
+        <!--缩写为-->
+        <a :href="url">百度</a>
+        <img :src="imgUrl">
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                url: 'http://baidu.com',
+                imgUrl: 'https://data.luckyi.cn/blog/appicon.jpg'
+            }
+        })
+    </script>
+</body>
+
+</html>

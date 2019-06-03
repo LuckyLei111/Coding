@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算属性、方法与监听器</title>
+    <script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ fullName }}
+        {{ age }}
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                firstName:'hello',
+                lastName:'world',
+                fullName:'hello world',
+                age:10
+            },
+            watch:{
+                firstName:function(){
+                    console.log('执行了一次');
+                    this.fullName = this.firstName + " " + this.lastName;
+                },
+                lastName: function () {
+                    console.log('执行了一次');
+                    this.fullName = this.firstName + " " + this.lastName;
+                }
+            }
+            // methods:{
+            //     fullName:function(){
+            //         console.log('执行了一次')
+            //         return this.firstName + " " + this.lastName
+            //     }
+            // },
+            // components:{
+            //     fullName:function(){
+            //         return this.firstName + " " + this.lastName
+            //     }
+            // }
+        })
+    </script>
+</body>
+</html>
