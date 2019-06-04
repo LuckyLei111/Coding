@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拼图小游戏</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: "微软雅黑";
+    }
+    .clearfix:after{content: "020"; display: block; height: 0; clear: both; visibility: hidden;}
+    .clearfix {zoom: 1;}
+    @font-face {
+        font-family: "dsdigi";
+        src: url('js/ds-digi.ttf');
+    }
+    .container{
+        width: 580px;
+        margin: 80px auto 0;
+        box-shadow: 0 0 10px #4c4c4c94;
+        box-sizing: border-box;
+        border-radius: 4px;   
+    }
+    .container .Console{
+        float: left;
+        width: 183px;
+        height: 360px;
+        margin: 10px 5px 0 10px;
+        padding-top: 20px;
+        border: 1px solid #828282;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    .container .Console div{
+        width: 80%;
+    	font-size: 20px;
+        margin: 0 auto;
+        color: #828282;
+    }
+    .container .Console div span{
+        font-family: 'dsdigi';
+        font-size: 24px;
+    }
+    .container .Console button{
+    	display: block;
+    	width: 80%;
+    	margin: 10px auto 20px;
+    	line-height: 32px;
+        border: none;
+        color: #fff;
+        background: #409EFF;
+        box-shadow: 0 0 10px #4c4c4c94;
+        border-radius: 4px;
+    }
+    .container .Console .preview{
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .container .Console .preview img{
+        width: 100%;
+    }
+    .container .Gaming{
+        float: left;
+        width: 360px;
+        height: 360px;
+        margin: 10px;
+        box-sizing: border-box;
+        position: relative;
+    }
+    .Gaming div{
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        text-align: center;
+        box-sizing: border-box;
+        position: absolute;
+        transition: 0.3s;
+    }
+    .Gaming .s_box{
+        width: 116px;
+        height: 116px;
+        overflow: hidden;
+        margin: 2px auto;
+        border-radius: 10px;
+        color: #fff;
+    }
+    .a1{
+        left: 0;    /*X轴*/
+        top: 0;     /*Y轴*/
+    }
+    .a2{
+        left: 120px;
+        top: 0;
+    }
+    .a3{
+        left: 240px;
+        top: 0;
+    }
+    .a4{
+        left: 0;
+        top: 120px;
+    }
+    .a5{
+        left: 120px;
+        top: 120px;
+    }
+    .a6{
+        left: 240px;
+        top: 120px;
+    }
+    .a7{
+        left: 0px;
+        top: 240px;
+    }
+    .a8{
+        left: 120px;
+        top: 240px;
+    }
+    .img_1{
+        background: url('http://img.yelei.me/images/img_01.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_2{
+        background: url('http://img.yelei.me/images/img_02.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_3{
+        background: url('http://img.yelei.me/images/img_03.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_4{
+        background: url('http://img.yelei.me/images/img_04.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_5{
+        background: url('http://img.yelei.me/images/img_05.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_6{
+        background: url('http://img.yelei.me/images/img_06.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_7{
+        background: url('http://img.yelei.me/images/img_07.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+    .img_8{
+        background: url('http://img.yelei.me/images/img_08.jpg') no-repeat center center;
+        background-size: 100%;
+    }
+</style>
+<body>
+    <div class="container clearfix">
+        <div class="Console">
+            <div>
+                <p>总用时：<span class="time_cost">00:00</span></p>
+            </div>
+            <button class="onff" onclick="stats()">开始</button>
+            <button class="Reset" onclick="reset()">重置</button>
+            <div class="preview">
+                <img src="http://img.yelei.me/images/img_ok.jpg" alt="">
+            </div>
+        </div>
+        <div class="Gaming">
+            <div class="a1" onclick="move(1)"><div class="s_box img_1">1</div></div>
+            <div class="a2" onclick="move(2)"><div class="s_box img_2">2</div></div>
+            <div class="a3" onclick="move(3)"><div class="s_box img_3">3</div></div>
+            <div class="a4" onclick="move(4)"><div class="s_box img_4">4</div></div>
+            <div class="a5" onclick="move(5)"><div class="s_box img_5">5</div></div>
+            <div class="a6" onclick="move(6)"><div class="s_box img_6">6</div></div>
+            <div class="a7" onclick="move(7)"><div class="s_box img_7">7</div></div>
+            <div class="a8" onclick="move(8)"><div class="s_box img_8">8</div></div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+</html>

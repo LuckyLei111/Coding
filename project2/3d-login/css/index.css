@@ -14,7 +14,7 @@ a{
     color: #444;
 }
 main {
-    background: url(/img/bg.jpg) center center no-repeat  ;
+    background: url('http://img.yelei.me/images/bg.jpg') center center no-repeat  ;
     background-size: cover;
 }
 header{
@@ -50,7 +50,7 @@ header .login{
     padding: 16px;
     background: #fff;
     border-radius: 20px;
-    box-shadow: 0 3px 4px 5px rgba(0, 0, 0, .2);
+    box-shadow: 0 0px 10px 0px #1d1d1d4a;
 }
 
 .modul .close{
