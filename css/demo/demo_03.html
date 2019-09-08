@@ -10,13 +10,23 @@
         margin: 0;
         padding: 0;
     }
+    html,body{
+        width: 100%;
+        height: 100%;
+        background: #CCFFFF;
+        position: relative;
+    }
     ul li{
         list-style: none;
     }
     .m-wind{
         width: 200px;
         height: 210px;
-        margin: 50px auto 0;
+        position: absolute;
+        left: 50%;
+        margin-left: -100px;
+        top: 50%;
+        margin-top: -105px;
     }
     .m-wind>.txt{
         margin-top: 20px;
@@ -24,7 +34,7 @@
         text-align: center;
     }
     .m-wind:hover{
-        /* animation:pulse 300ms infinite; */
+        animation:pulse 400ms infinite;
     }
     .m-wind>.top{
         width: 200px;
@@ -59,7 +69,7 @@
         width: 180px;
         height: 120px;
         border: 10px solid #000;
-        background: rgb(255, 255, 255);
+        background: #CCFFFF;
         border-radius: 5px;
         padding-top: 10px;
     }
@@ -139,7 +149,7 @@
         width: 10px;
         height: 5px;
         margin: 0 auto;
-        background: #fff;
+        background: #CCFFFF;
         border-radius: 0 0 5px 5px;
     }
 
@@ -166,7 +176,7 @@
         width: 10px;
         height: 5px;
         margin: 0 auto;
-        background: #fff;
+        background: #CCFFFF;
         border-radius: 0 0 5px 5px;
     }
     @keyframes pulse {
@@ -226,7 +236,7 @@
             </ul>
         </div>
         <div class="txt">
-            哔哩哔哩 (゜-゜)つロ 干杯~
+            <a href="https://www.bilibili.com/">哔哩哔哩 (゜-゜)つロ 干杯~</a>
         </div>
     </div>
 </body>
